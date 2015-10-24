@@ -14,7 +14,6 @@
 @property (weak, nonatomic) IBOutlet UIButton *walkingButton;
 @property (weak, nonatomic) IBOutlet UIButton *vehicleButton;
 @property (weak, nonatomic) IBOutlet UIButton *cyclingButton;
-
 @end
 
 @implementation TANOptionsVC
@@ -22,6 +21,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+    self.navigationController.navigationBarHidden = YES;
     
     [TANLocation share].delegate = self;
     [[TANLocation share] startGetLocation];

@@ -45,6 +45,8 @@
     
     __weak IBOutlet UIView *circleView;
     
+    __weak IBOutlet UIImageView *topProgressImage;
+    
 }
 @end
 
@@ -61,7 +63,7 @@
     contentView.layer.cornerRadius = 5.f;
     
     bgImageView.maskView = [[UIView alloc] initWithFrame:bgImageView.bounds];
-    bgImageView.maskView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.6];
+    bgImageView.maskView.backgroundColor = [[UIColor colorFromRGB:0x3e3e3e] colorWithAlphaComponent:0.6];
     
     [bgImageView sd_setImageWithURL:[NSURL URLWithString:[TANDataCenter dataCenter].tanProject.image]];
     
@@ -81,7 +83,7 @@
     
     donationDesLabel.font = [UIFont systemFontOfSize:12];
     donationDesLabel.textColor = [UIColor lightGrayColor];
-    donationDesLabel.text = @"您每走1000步，PathSource将为基金捐献一元钱，以购买书籍。";
+    donationDesLabel.text = @"您每走1000步，PathSource将为基金捐献一元钱，为鄂西山区的贫困儿童购买书籍。";
     
     [self addLineOnBottom:nameLabel];
     
@@ -117,7 +119,7 @@
 - (void)setUpData
 {
     TanProject * project = [TANDataCenter dataCenter].tanProject;
-    nameLabel.text = project.address;
+    nameLabel.text = [NSString stringWithFormat:@"目的地:%@",project.address];
     
     stepsLabel.text = [NSString stringWithFormat:@"当前已经行走%ld步",totalStepsCount];
     caloriesLabel.text = [NSString stringWithFormat:@"相当于大约%ld大卡",totalStepsCount/28];
