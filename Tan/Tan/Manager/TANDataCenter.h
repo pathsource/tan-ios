@@ -8,14 +8,19 @@
 
 #import <Foundation/Foundation.h>
 
+@protocol TANDataCenterDelegate <NSObject>
+- (void)checkinResult:(BOOL)success withContent:(NSString*)content andHint:(NSString*)hint;
+@end
+
 extern NSString * const TANDidGetProjectNotification;
 
 @interface TANDataCenter : NSObject
 
+@property (nonatomic, weak) id<TANDataCenterDelegate> delegate;
 @property (strong,nonatomic) NSArray * projects;
 + (TANDataCenter *)dataCenter;
 - (void)startFetchProjects:(NSArray*)coordinates;
-- (void)startCheckin:(NSArray*)coordinates;
+- (void)startCheckin:(NSNumber *)projectID withCoordinates:(NSArray*)coordinates;
 - (void)startValidateAnswer;
 
 + (NSString *)projectDetailApi:(NSNumber *)projectID;

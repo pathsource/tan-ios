@@ -9,8 +9,9 @@
 #import "TanArrivalVC.h"
 #import "TanDefinition.h"
 #import "TanProjectListVC.h"
+#import "TANLocation.h"
 
-@interface TanArrivalVC()
+@interface TanArrivalVC() <TANLocationDelegate, TANDataCenterDelegate>
 {
     
     __weak IBOutlet UIButton *giveupButton;
@@ -32,9 +33,8 @@
 }
 
 - (IBAction)arrivalButtonAction:(id)sender {
-    
-    
-    
+    [TANLocation share].delegate = self;
+    [[TANLocation share] startGetLocation];
 }
 
 - (IBAction)giveUpButtonAction:(id)sender {
@@ -43,6 +43,19 @@
             [self.navigationController popToViewController:obj animated:YES];
         }
     }];
+}
+
+#pragma mark TANLocationDelegate
+- (void)getLocation:(NSArray*)coordinates
+{
+    [TANDataCenter dataCenter].delegate = self;
+    [[TANDataCenter dataCenter] startCheckin:@(2) withCoordinates:coordinates];
+}
+
+#pragma mark TANDataCenterDelegate
+- (void)checkinResult:(BOOL)success withContent:(NSString*)content andHint:(NSString*)hint
+{
+    
 }
 
 @end

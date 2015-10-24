@@ -40,17 +40,17 @@ static TANDataCenter * dataCenter = nil;
 
 + (NSString *)projectDetailApi:(NSNumber *)projectID
 {
-    return [serverStr stringByAppendingFormat:@"%@/%@",detailStr,projectID];
+    return [serverStr stringByAppendingFormat:@"%@%@",detailStr,projectID];
 }
 
 + (NSString *)projectCheckinApi:(NSNumber *)projectID
 {
-    return [serverStr stringByAppendingFormat:@"%@/%@/checkin",detailStr,projectID];
+    return [serverStr stringByAppendingFormat:@"%@%@/checkin",detailStr,projectID];
 }
 
 + (NSString *)projectValidateApi:(NSNumber *)projectID withAnswer:(NSString*)answer
 {
-    return [serverStr stringByAppendingFormat:@"%@/%@/validate?answer=%@", detailStr, projectID, answer];
+    return [serverStr stringByAppendingFormat:@"%@/%@validate?answer=%@", detailStr, projectID, answer];
 }
 
 - (void)startCheckin:(NSNumber *)projectID withCoordinates:(NSArray*)coordinates
@@ -59,15 +59,17 @@ static TANDataCenter * dataCenter = nil;
     if (nil != coordinates) {
         parameters = @{@"coordinates": coordinates};
     }
-    [[TANDataCenter dataCenter] fetchDataWithType:@"GET" URL:[TANDataCenter projectCheckinApi:projectID] parameters:parameters completion:^(id responseObject) {
-        NSArray * jsons = responseObject[@"success"];
-        
+    [[TANDataCenter dataCenter] fetchDataWithType:@"POST" URL:[TANDataCenter projectCheckinApi:projectID] parameters:parameters completion:^(id responseObject) {
+        BOOL success = responseObject[@"success"];
+        NSString * hint = responseObject[@"hint"];
+        NSString * content = responseObject[@"content"];
+        [self.delegate checkinResult:success withContent:content andHint:hint];
     }];
 }
 
 - (void)startValidateAnswer:(NSNumber *)projectID withAnswer:(NSString*)answer
 {
-    [[TANDataCenter dataCenter] fetchDataWithType:@"GET" URL:[TANDataCenter projectValidateApi:projectID withAnswer:answer] parameters:nil completion:^(id responseObject) {
+    [[TANDataCenter dataCenter] fetchDataWithType:@"POST" URL:[TANDataCenter projectValidateApi:projectID withAnswer:answer] parameters:nil completion:^(id responseObject) {
         NSArray * jsons = responseObject[@"success"];
         
     }];
