@@ -63,10 +63,7 @@
     circleView.layer.cornerRadius = CGRectGetWidth(circleView.bounds)/2;
     contentView.layer.cornerRadius = 5.f;
     
-    bgImageView.maskView = [[UIView alloc] initWithFrame:bgImageView.bounds];
-    bgImageView.maskView.backgroundColor = [[UIColor colorFromRGB:0x3e3e3e] colorWithAlphaComponent:0.6];
-    
-    [bgImageView sd_setImageWithURL:[NSURL URLWithString:[TANDataCenter dataCenter].tanProject.image]];
+    [bgImageView setImage:[UIImage imageNamed:@"arrive_bg.png"]];
     
     arrivalButton.backgroundColor = [UIColor colorFromRGB:0x50af37];
     [arrivalButton setTitle:@"到达 " forState:UIControlStateNormal];

@@ -28,11 +28,8 @@
     
     _bgView.layer.cornerRadius = 5.0;
     _scanBtn.clipsToBounds = YES;
-    
-    _bgImageView.maskView = [[UIView alloc] initWithFrame:_bgImageView.bounds];
-    _bgImageView.maskView.backgroundColor = [[UIColor colorFromRGB:0x3e3e3e] colorWithAlphaComponent:0.6];
-    
-    [_bgImageView sd_setImageWithURL:[NSURL URLWithString:[TANDataCenter dataCenter].tanProject.image]];
+
+    [_bgImageView setImage:[UIImage imageNamed:@"arrive_bg.png"]];
 }
 
 #pragma mark IB Action
