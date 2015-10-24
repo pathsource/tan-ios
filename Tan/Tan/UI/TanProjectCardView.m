@@ -40,6 +40,9 @@
     [self setup];
     
     desLabel.font = [UIFont systemFontOfSize:13];
+    desLabel.numberOfLines = 2;
+    
+    distanceLabel.font = [UIFont systemFontOfSize:15];
 }
 
 - (void)setProject:(TanProject *)project

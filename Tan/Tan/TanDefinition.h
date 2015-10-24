@@ -12,5 +12,6 @@
 #import "TANDataCenter.h"
 #import "UIImageView+WebCache.h"
 #import "TanProject.h"
+#import "UIColor+Tan.h"
 
 #endif /* Header_h */

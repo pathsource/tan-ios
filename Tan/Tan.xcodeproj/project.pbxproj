@@ -63,6 +63,8 @@
 		BF3BAF831BDB9821009F33D3 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF3BAF821BDB9821009F33D3 /* HealthKit.framework */; };
 		BF3BAF851BDB9828009F33D3 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF3BAF841BDB9828009F33D3 /* MapKit.framework */; };
 		BF3BAF881BDBA7B5009F33D3 /* TanProjectDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BF3BAF871BDBA7B5009F33D3 /* TanProjectDetailVC.m */; };
+		BF3BAF8C1BDBB3A3009F33D3 /* UIColor+Tan.m in Sources */ = {isa = PBXBuildFile; fileRef = BF3BAF8B1BDBB3A3009F33D3 /* UIColor+Tan.m */; };
+		BF3BAF8E1BDBB5C4009F33D3 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF3BAF8D1BDBB5C4009F33D3 /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -188,6 +190,9 @@
 		BF3BAF841BDB9828009F33D3 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		BF3BAF861BDBA7B5009F33D3 /* TanProjectDetailVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TanProjectDetailVC.h; sourceTree = "<group>"; };
 		BF3BAF871BDBA7B5009F33D3 /* TanProjectDetailVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TanProjectDetailVC.m; sourceTree = "<group>"; };
+		BF3BAF8A1BDBB3A3009F33D3 /* UIColor+Tan.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Tan.h"; sourceTree = "<group>"; };
+		BF3BAF8B1BDBB3A3009F33D3 /* UIColor+Tan.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Tan.m"; sourceTree = "<group>"; };
+		BF3BAF8D1BDBB5C4009F33D3 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -195,6 +200,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF3BAF8E1BDBB5C4009F33D3 /* CoreLocation.framework in Frameworks */,
 				BF3BAF851BDB9828009F33D3 /* MapKit.framework in Frameworks */,
 				BF3BAF831BDB9821009F33D3 /* HealthKit.framework in Frameworks */,
 			);
@@ -213,6 +219,7 @@
 		BF3BAEAE1BDB5362009F33D3 = {
 			isa = PBXGroup;
 			children = (
+				BF3BAF8D1BDBB5C4009F33D3 /* CoreLocation.framework */,
 				BF3BAF841BDB9828009F33D3 /* MapKit.framework */,
 				BF3BAF821BDB9821009F33D3 /* HealthKit.framework */,
 				BF3BAEB91BDB5362009F33D3 /* Tan */,
@@ -236,6 +243,7 @@
 				BF3BAEBD1BDB5362009F33D3 /* AppDelegate.h */,
 				BF3BAEBE1BDB5362009F33D3 /* AppDelegate.m */,
 				BF3BAF811BDB952A009F33D3 /* TanDefinition.h */,
+				BF3BAF891BDBB376009F33D3 /* Categories */,
 				BF3BAF7B1BDB89F6009F33D3 /* Resource */,
 				BF3BAF181BDB5EE9009F33D3 /* DataModel */,
 				BF3BAF191BDB5EE9009F33D3 /* Manager */,
@@ -440,6 +448,15 @@
 			path = Resource;
 			sourceTree = "<group>";
 		};
+		BF3BAF891BDBB376009F33D3 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				BF3BAF8A1BDBB3A3009F33D3 /* UIColor+Tan.h */,
+				BF3BAF8B1BDBB3A3009F33D3 /* UIColor+Tan.m */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -580,6 +597,7 @@
 				BF3BAF101BDB5EBB009F33D3 /* AFNetworkActivityIndicatorManager.m in Sources */,
 				BF3BAF4C1BDB6BC2009F33D3 /* SDWebImagePrefetcher.m in Sources */,
 				BF3BAF0F1BDB5EBB009F33D3 /* AFURLSessionManager.m in Sources */,
+				BF3BAF8C1BDBB3A3009F33D3 /* UIColor+Tan.m in Sources */,
 				BF3BAF4A1BDB6BC2009F33D3 /* SDWebImageDownloaderOperation.m in Sources */,
 				BF3BAEBF1BDB5362009F33D3 /* AppDelegate.m in Sources */,
 				BF3BAF4B1BDB6BC2009F33D3 /* SDWebImageManager.m in Sources */,
