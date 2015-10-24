@@ -48,6 +48,9 @@
 		BF3BAF501BDB6BC2009F33D3 /* UIImageView+HighlightedWebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = BF3BAF401BDB6BC2009F33D3 /* UIImageView+HighlightedWebCache.m */; };
 		BF3BAF511BDB6BC2009F33D3 /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = BF3BAF421BDB6BC2009F33D3 /* UIImageView+WebCache.m */; };
 		BF3BAF521BDB6BC2009F33D3 /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = BF3BAF441BDB6BC2009F33D3 /* UIView+WebCacheOperation.m */; };
+		BF3BAF551BDB75DD009F33D3 /* TanProjectListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BF3BAF541BDB75DD009F33D3 /* TanProjectListVC.m */; };
+		BF3BAF5B1BDB78BB009F33D3 /* ZLPanGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = BF3BAF581BDB78BB009F33D3 /* ZLPanGestureRecognizer.m */; };
+		BF3BAF5C1BDB78BB009F33D3 /* ZLSwipeableView.m in Sources */ = {isa = PBXBuildFile; fileRef = BF3BAF5A1BDB78BB009F33D3 /* ZLSwipeableView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -146,6 +149,12 @@
 		BF3BAF421BDB6BC2009F33D3 /* UIImageView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+WebCache.m"; sourceTree = "<group>"; };
 		BF3BAF431BDB6BC2009F33D3 /* UIView+WebCacheOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+WebCacheOperation.h"; sourceTree = "<group>"; };
 		BF3BAF441BDB6BC2009F33D3 /* UIView+WebCacheOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WebCacheOperation.m"; sourceTree = "<group>"; };
+		BF3BAF531BDB75DD009F33D3 /* TanProjectListVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TanProjectListVC.h; sourceTree = "<group>"; };
+		BF3BAF541BDB75DD009F33D3 /* TanProjectListVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TanProjectListVC.m; sourceTree = "<group>"; };
+		BF3BAF571BDB78BB009F33D3 /* ZLPanGestureRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZLPanGestureRecognizer.h; sourceTree = "<group>"; };
+		BF3BAF581BDB78BB009F33D3 /* ZLPanGestureRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZLPanGestureRecognizer.m; sourceTree = "<group>"; };
+		BF3BAF591BDB78BB009F33D3 /* ZLSwipeableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZLSwipeableView.h; sourceTree = "<group>"; };
+		BF3BAF5A1BDB78BB009F33D3 /* ZLSwipeableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZLSwipeableView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -222,6 +231,7 @@
 		BF3BAEDF1BDB5EBB009F33D3 /* ThirdPatrty */ = {
 			isa = PBXGroup;
 			children = (
+				BF3BAF561BDB78BB009F33D3 /* ZLSwipeableView */,
 				BF3BAF271BDB6BC2009F33D3 /* SDWebImage */,
 				BF3BAEE01BDB5EBB009F33D3 /* AFNetworking */,
 				BF3BAEF41BDB5EBB009F33D3 /* UIKit+AFNetworking */,
@@ -305,6 +315,8 @@
 			children = (
 				BF3BAF1B1BDB5F1C009F33D3 /* TANOptionsVC.h */,
 				BF3BAF1C1BDB5F1C009F33D3 /* TANOptionsVC.m */,
+				BF3BAF531BDB75DD009F33D3 /* TanProjectListVC.h */,
+				BF3BAF541BDB75DD009F33D3 /* TanProjectListVC.m */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -343,6 +355,17 @@
 				BF3BAF441BDB6BC2009F33D3 /* UIView+WebCacheOperation.m */,
 			);
 			path = SDWebImage;
+			sourceTree = "<group>";
+		};
+		BF3BAF561BDB78BB009F33D3 /* ZLSwipeableView */ = {
+			isa = PBXGroup;
+			children = (
+				BF3BAF571BDB78BB009F33D3 /* ZLPanGestureRecognizer.h */,
+				BF3BAF581BDB78BB009F33D3 /* ZLPanGestureRecognizer.m */,
+				BF3BAF591BDB78BB009F33D3 /* ZLSwipeableView.h */,
+				BF3BAF5A1BDB78BB009F33D3 /* ZLSwipeableView.m */,
+			);
+			path = ZLSwipeableView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -462,15 +485,18 @@
 				BF3BAF511BDB6BC2009F33D3 /* UIImageView+WebCache.m in Sources */,
 				BF3BAF451BDB6BC2009F33D3 /* NSData+ImageContentType.m in Sources */,
 				BF3BAF491BDB6BC2009F33D3 /* SDWebImageDownloader.m in Sources */,
+				BF3BAF5C1BDB78BB009F33D3 /* ZLSwipeableView.m in Sources */,
 				BF3BAF0B1BDB5EBB009F33D3 /* AFSecurityPolicy.m in Sources */,
 				BF3BAF161BDB5EBB009F33D3 /* UIRefreshControl+AFNetworking.m in Sources */,
 				BF3BAF171BDB5EBB009F33D3 /* UIWebView+AFNetworking.m in Sources */,
+				BF3BAF5B1BDB78BB009F33D3 /* ZLPanGestureRecognizer.m in Sources */,
 				BF3BAF261BDB6576009F33D3 /* TanProject.m in Sources */,
 				BF3BAF091BDB5EBB009F33D3 /* AFHTTPSessionManager.m in Sources */,
 				BF3BAF121BDB5EBB009F33D3 /* UIAlertView+AFNetworking.m in Sources */,
 				BF3BAF471BDB6BC2009F33D3 /* SDWebImageCompat.m in Sources */,
 				BF3BAF1D1BDB5F1C009F33D3 /* TANOptionsVC.m in Sources */,
 				BF3BAF0D1BDB5EBB009F33D3 /* AFURLRequestSerialization.m in Sources */,
+				BF3BAF551BDB75DD009F33D3 /* TanProjectListVC.m in Sources */,
 				BF3BAF231BDB64DF009F33D3 /* TanBaseItem.m in Sources */,
 				BF3BAF101BDB5EBB009F33D3 /* AFNetworkActivityIndicatorManager.m in Sources */,
 				BF3BAF4C1BDB6BC2009F33D3 /* SDWebImagePrefetcher.m in Sources */,
@@ -607,7 +633,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Tan/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = PathSource.Tan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -618,7 +646,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Tan/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = PathSource.Tan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -668,6 +698,7 @@
 				BF3BAEDB1BDB5362009F33D3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BF3BAEDC1BDB5362009F33D3 /* Build configuration list for PBXNativeTarget "TanUITests" */ = {
 			isa = XCConfigurationList;
@@ -676,6 +707,7 @@
 				BF3BAEDE1BDB5362009F33D3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

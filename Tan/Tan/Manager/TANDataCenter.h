@@ -10,5 +10,5 @@
 
 @interface TANDataCenter : NSObject
 + (TANDataCenter *)dataCenter;
-+ (void)fetchDataWithType:(NSString *)type URL:(NSString *)URL parameters:(NSDictionary *)parameters
++ (void)fetchDataWithType:(NSString *)type URL:(NSString *)URL parameters:(NSDictionary *)parameters;
 @end
