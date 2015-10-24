@@ -67,6 +67,7 @@
 		BF3BAF931BDBB869009F33D3 /* TanArrivalVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BF3BAF921BDBB869009F33D3 /* TanArrivalVC.m */; };
 		BF3BAF981BDBCA13009F33D3 /* List_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = BF3BAF971BDBCA13009F33D3 /* List_bg.png */; };
 		BF3BAF9B1BDBD994009F33D3 /* TANLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = BF3BAF9A1BDBD994009F33D3 /* TANLocation.m */; };
+		BF3BAF9E1BDBDA07009F33D3 /* TanClueVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BF3BAF9D1BDBDA07009F33D3 /* TanClueVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -199,6 +200,8 @@
 		BF3BAF971BDBCA13009F33D3 /* List_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = List_bg.png; sourceTree = "<group>"; };
 		BF3BAF991BDBD994009F33D3 /* TANLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TANLocation.h; sourceTree = "<group>"; };
 		BF3BAF9A1BDBD994009F33D3 /* TANLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TANLocation.m; sourceTree = "<group>"; };
+		BF3BAF9C1BDBDA07009F33D3 /* TanClueVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TanClueVC.h; sourceTree = "<group>"; };
+		BF3BAF9D1BDBDA07009F33D3 /* TanClueVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TanClueVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -384,6 +387,8 @@
 				BF3BAF871BDBA7B5009F33D3 /* TanProjectDetailVC.m */,
 				BF3BAF911BDBB869009F33D3 /* TanArrivalVC.h */,
 				BF3BAF921BDBB869009F33D3 /* TanArrivalVC.m */,
+				BF3BAF9C1BDBDA07009F33D3 /* TanClueVC.h */,
+				BF3BAF9D1BDBDA07009F33D3 /* TanClueVC.m */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -608,6 +613,7 @@
 				BF3BAF731BDB8558009F33D3 /* QRMenu.m in Sources */,
 				BF3BAF101BDB5EBB009F33D3 /* AFNetworkActivityIndicatorManager.m in Sources */,
 				BF3BAF4C1BDB6BC2009F33D3 /* SDWebImagePrefetcher.m in Sources */,
+				BF3BAF9E1BDBDA07009F33D3 /* TanClueVC.m in Sources */,
 				BF3BAF0F1BDB5EBB009F33D3 /* AFURLSessionManager.m in Sources */,
 				BF3BAF8C1BDBB3A3009F33D3 /* UIColor+Tan.m in Sources */,
 				BF3BAF4A1BDB6BC2009F33D3 /* SDWebImageDownloaderOperation.m in Sources */,
