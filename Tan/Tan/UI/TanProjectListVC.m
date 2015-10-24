@@ -29,6 +29,9 @@ ZLSwipeableViewDelegate>
     
     __weak IBOutlet UIButton *mapButton;
     
+    __weak IBOutlet UILabel *addressLabel;
+    __weak IBOutlet UILabel *desLabel;
+    
 }
 @property (weak, nonatomic) IBOutlet UIImageView *backgroundImageView;
 @property (weak, nonatomic) IBOutlet ZLSwipeableView *swipeCardsView;
@@ -46,6 +49,13 @@ ZLSwipeableViewDelegate>
     
     self.swipeCardsView.delegate= self;
     self.swipeCardsView.dataSource = self;
+    
+    desLabel.textColor = [UIColor whiteColor];
+    desLabel.font = [UIFont systemFontOfSize:18];
+    desLabel.text = @"选择一个你想去的地方";
+    
+    addressLabel.textColor = [UIColor darkGrayColor];
+    addressLabel.font = [UIFont systemFontOfSize:16];
     
     self.navigationController.navigationBarHidden = YES;
     
@@ -122,6 +132,8 @@ ZLSwipeableViewDelegate>
                                  options:nil] objectAtIndex:0];
     cardView.frame = self.swipeCardsView.bounds;
     cardView.project = self.projects[currentIndex];
+    
+    addressLabel.text = [(TanProjectCardView *)swipeableView.topSwipeableView project].address;
 
     [cardView selectedCardHandler:^(id sender) {
         UIStoryboard *mainStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];

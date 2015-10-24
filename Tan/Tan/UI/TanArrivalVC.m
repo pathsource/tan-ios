@@ -11,6 +11,7 @@
 #import "TanProjectListVC.h"
 #import "TanClueVC.h"
 #import "TANLocation.h"
+#import <HealthKit/HealthKit.h>
 
 @interface TanArrivalVC() <TANLocationDelegate, TANDataCenterDelegate>
 {
@@ -144,6 +145,7 @@
                                                                      double step = [quantitySample.quantity doubleValueForUnit:([HKUnit countUnit])];
                                                                      totalSteps = totalSteps + step;
                                                                  }
+                                                                 
                                                              }
                                                          }];
     [healthStore executeQuery:query];
