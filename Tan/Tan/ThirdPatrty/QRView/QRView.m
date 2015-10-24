@@ -40,10 +40,6 @@ static NSTimeInterval kQrLineanimateDuration = 0.02;
         NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:kQrLineanimateDuration target:self selector:@selector(show) userInfo:nil repeats:YES];
         [timer fire];
     }
-    
-    if (!qrMenu) {
-        [self initQrMenu];
-    }
 }
 
 - (void)initQRLine {

@@ -161,10 +161,6 @@
     if (self.qrUrlBlock) {
         self.qrUrlBlock(stringValue);
     }
-    
-//    [self pop:nil];
-    UIViewController *view = [UIViewController new];
-    [self.navigationController pushViewController:view animated:YES];
 }
 
 
