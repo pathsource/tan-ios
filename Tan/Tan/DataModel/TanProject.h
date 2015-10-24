@@ -17,4 +17,6 @@
 @property (copy,nonatomic) NSString *background;
 @property (copy,nonatomic) NSString *image;
 @property (copy,nonatomic) NSString *distance;
+@property (copy,nonatomic) NSString * unit_steps_count;
+@property (copy,nonatomic) NSString * unit_type;
 @end

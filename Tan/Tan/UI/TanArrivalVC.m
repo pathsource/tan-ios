@@ -55,10 +55,12 @@
     [giveupButton setTitle:@"放弃" forState:UIControlStateNormal];
     
     arrivelLabel.text = @"开始解答谜题";
-    arrivelLabel.font = [UIFont systemFontOfSize:12];
+    arrivelLabel.font = [UIFont systemFontOfSize:11];
+    arrivelLabel.textColor = [UIColor whiteColor];
     
     giveupLabel.text = @"回答主页面";
-    giveupLabel.font = [UIFont systemFontOfSize:12];
+    giveupLabel.font = [UIFont systemFontOfSize:11];
+    giveupLabel.textColor = [UIColor whiteColor];
 }
 
 
