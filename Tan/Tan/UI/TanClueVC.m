@@ -8,24 +8,31 @@
 
 #import "TanClueVC.h"
 #import "TANQRViewController.h"
+#import "TanDefinition.h"
 #import "TANDataCenter.h"
 
 @interface TanClueVC() <TANDataCenterDelegate, TANQRViewControllerDelegate>
 {
     
 }
+@property (weak, nonatomic) IBOutlet UIImageView *bgImageView;
+@property (weak, nonatomic) IBOutlet UIView *bgView;
+@property (weak, nonatomic) IBOutlet UIButton *scanBtn;
+
 @end
 
 @implementation TanClueVC
 
 - (void)viewDidLoad{
     [super viewDidLoad];
-    NSString *originStr = @"子龙背后";
-    NSData* originData = [originStr dataUsingEncoding:NSUTF8StringEncoding];
     
-    NSString* encodeResult = [originData base64EncodedStringWithOptions:NSDataBase64EncodingEndLineWithLineFeed];
+    _bgView.layer.cornerRadius = 5.0;
+    _scanBtn.clipsToBounds = YES;
     
-    NSLog(@"encodeResult:%@",encodeResult);
+    _bgImageView.maskView = [[UIView alloc] initWithFrame:_bgImageView.bounds];
+    _bgImageView.maskView.backgroundColor = [[UIColor colorFromRGB:0x3e3e3e] colorWithAlphaComponent:0.6];
+    
+    [_bgImageView sd_setImageWithURL:[NSURL URLWithString:[TANDataCenter dataCenter].tanProject.image]];
 }
 
 #pragma mark IB Action
@@ -37,6 +44,10 @@
 }
 
 #pragma mark TANDataCenterDelegate
+- (void)validateResult:(BOOL)success
+{
+    [self performSegueWithIdentifier:@"goCongrat" sender:self];
+}
 
 #pragma mark TANQRViewControllerDelegate
 - (void)qrResult:(NSString*)result

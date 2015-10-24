@@ -38,4 +38,5 @@ extern NSString * const TANDidGetProjectNotification;
 - (void)startValidateAnswer:(NSNumber *)projectID withAnswer:(NSString*)answer;
 
 + (NSString *)projectDetailApi:(NSNumber *)projectID;
++ (NSString *)projectCongratApi:(NSNumber *)projectID;
 @end

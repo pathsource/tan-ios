@@ -43,6 +43,11 @@ static TANDataCenter * dataCenter = nil;
     return [serverStr stringByAppendingFormat:@"%@%@",detailStr,projectID];
 }
 
++ (NSString *)projectCongratApi:(NSNumber *)projectID
+{
+    return [serverStr stringByAppendingFormat:@"%@%@/result",detailStr,projectID];
+}
+
 + (NSString *)projectStartApi:(NSNumber *)projectID
 {
     return [serverStr stringByAppendingFormat:@"%@%@/start",detailStr, projectID];
