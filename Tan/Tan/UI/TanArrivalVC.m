@@ -51,7 +51,6 @@
     arrivalButton.backgroundColor = [UIColor colorFromRGB:0x50af37];
     [arrivalButton setTitle:@"到达 " forState:UIControlStateNormal];
  
-    
     giveupButton.backgroundColor =[UIColor colorFromRGB:0xb6b6b6];
     [giveupButton setTitle:@"放弃" forState:UIControlStateNormal];
     

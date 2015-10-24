@@ -74,6 +74,10 @@
 }
 
 - (IBAction)cardSelectedAction:(id)sender {
+    
+    UIButton * button = sender;
+    button.enabled = NO;
+    
     if (_handler) {
         _handler(sender);
     }
