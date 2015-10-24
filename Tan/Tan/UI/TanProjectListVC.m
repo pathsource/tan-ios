@@ -8,9 +8,24 @@
 
 #import "TanProjectListVC.h"
 #import "ZLSwipeableView.h"
+#import "TanProjectCardView.h"
 
 @interface TanProjectListVC ()<ZLSwipeableViewDataSource,
 ZLSwipeableViewDelegate>
+{
+    
+    __weak IBOutlet UIButton *locationButton;
+    
+    __weak IBOutlet UIButton *cyclingButton;
+    __weak IBOutlet UIButton *walkingButton;
+    __weak IBOutlet UIButton *drivingButton;
+    
+    
+    __weak IBOutlet UIButton *mapButton;
+    
+}
+@property (weak, nonatomic) IBOutlet UIImageView *backgroundImageView;
+@property (weak, nonatomic) IBOutlet ZLSwipeableView *swipeCardsView;
 
 @end
 
@@ -19,6 +34,11 @@ ZLSwipeableViewDelegate>
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    self.swipeCardsView.delegate= self;
+    self.swipeCardsView.dataSource = self;
+    
+    self.navigationController.navigationBarHidden = YES;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -72,6 +92,32 @@ ZLSwipeableViewDelegate>
 #pragma mark - ZLSwipeableViewDataSource
 
 - (UIView *)nextViewForSwipeableView:(ZLSwipeableView *)swipeableView {
-    return nil;
+    TanProjectCardView *cardView =
+    [[[NSBundle mainBundle] loadNibNamed:@"TanProjectCardView"
+                                   owner:self
+                                 options:nil] objectAtIndex:0];
+    cardView.frame = self.swipeCardsView.bounds;
+    [cardView selectedCardHandler:^(id sender) {
+        
+    }];
+    
+    return cardView;
 }
+
+#pragma mark ====== ButtonAction ======
+- (IBAction)locationButtonAction:(id)sender {
+}
+
+- (IBAction)cyclingButtonAction:(id)sender {
+}
+
+- (IBAction)walkingButtonAction:(id)sender {
+}
+
+- (IBAction)drivingButtonAction:(id)sender {
+}
+
+- (IBAction)mapButtonAction:(id)sender {
+}
+
 @end

@@ -57,6 +57,10 @@
 		BF3BAF731BDB8558009F33D3 /* QRMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = BF3BAF6D1BDB8558009F33D3 /* QRMenu.m */; };
 		BF3BAF741BDB8558009F33D3 /* QRUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = BF3BAF6F1BDB8558009F33D3 /* QRUtil.m */; };
 		BF3BAF751BDB8558009F33D3 /* QRView.m in Sources */ = {isa = PBXBuildFile; fileRef = BF3BAF711BDB8558009F33D3 /* QRView.m */; };
+		BF3BAF791BDB8947009F33D3 /* TanProjectCardView.m in Sources */ = {isa = PBXBuildFile; fileRef = BF3BAF771BDB8947009F33D3 /* TanProjectCardView.m */; };
+		BF3BAF7A1BDB8947009F33D3 /* TanProjectCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF3BAF781BDB8947009F33D3 /* TanProjectCardView.xib */; };
+		BF3BAF7D1BDB89F6009F33D3 /* psr_bg_project.png in Resources */ = {isa = PBXBuildFile; fileRef = BF3BAF7C1BDB89F6009F33D3 /* psr_bg_project.png */; };
+		BF3BAF801BDB94C1009F33D3 /* PSFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = BF3BAF7F1BDB94C1009F33D3 /* PSFormatter.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -173,6 +177,13 @@
 		BF3BAF6F1BDB8558009F33D3 /* QRUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = QRUtil.m; path = QRView/QRUtil.m; sourceTree = "<group>"; };
 		BF3BAF701BDB8558009F33D3 /* QRView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QRView.h; path = QRView/QRView.h; sourceTree = "<group>"; };
 		BF3BAF711BDB8558009F33D3 /* QRView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = QRView.m; path = QRView/QRView.m; sourceTree = "<group>"; };
+		BF3BAF761BDB8947009F33D3 /* TanProjectCardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TanProjectCardView.h; sourceTree = "<group>"; };
+		BF3BAF771BDB8947009F33D3 /* TanProjectCardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TanProjectCardView.m; sourceTree = "<group>"; };
+		BF3BAF781BDB8947009F33D3 /* TanProjectCardView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TanProjectCardView.xib; sourceTree = "<group>"; };
+		BF3BAF7C1BDB89F6009F33D3 /* psr_bg_project.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = psr_bg_project.png; sourceTree = "<group>"; };
+		BF3BAF7E1BDB94C1009F33D3 /* PSFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSFormatter.h; sourceTree = "<group>"; };
+		BF3BAF7F1BDB94C1009F33D3 /* PSFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSFormatter.m; sourceTree = "<group>"; };
+		BF3BAF811BDB952A009F33D3 /* TanDefinition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TanDefinition.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -216,6 +227,8 @@
 			children = (
 				BF3BAEBD1BDB5362009F33D3 /* AppDelegate.h */,
 				BF3BAEBE1BDB5362009F33D3 /* AppDelegate.m */,
+				BF3BAF811BDB952A009F33D3 /* TanDefinition.h */,
+				BF3BAF7B1BDB89F6009F33D3 /* Resource */,
 				BF3BAF181BDB5EE9009F33D3 /* DataModel */,
 				BF3BAF191BDB5EE9009F33D3 /* Manager */,
 				BF3BAF1A1BDB5EE9009F33D3 /* UI */,
@@ -249,6 +262,8 @@
 		BF3BAEDF1BDB5EBB009F33D3 /* ThirdPatrty */ = {
 			isa = PBXGroup;
 			children = (
+				BF3BAF7E1BDB94C1009F33D3 /* PSFormatter.h */,
+				BF3BAF7F1BDB94C1009F33D3 /* PSFormatter.m */,
 				BF3BAF691BDB8544009F33D3 /* QR */,
 				BF3BAF561BDB78BB009F33D3 /* ZLSwipeableView */,
 				BF3BAF271BDB6BC2009F33D3 /* SDWebImage */,
@@ -332,6 +347,9 @@
 		BF3BAF1A1BDB5EE9009F33D3 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				BF3BAF761BDB8947009F33D3 /* TanProjectCardView.h */,
+				BF3BAF771BDB8947009F33D3 /* TanProjectCardView.m */,
+				BF3BAF781BDB8947009F33D3 /* TanProjectCardView.xib */,
 				BF3BAF631BDB8540009F33D3 /* TANNearByProjectViewController.h */,
 				BF3BAF641BDB8540009F33D3 /* TANNearByProjectViewController.m */,
 				BF3BAF651BDB8540009F33D3 /* TANQRViewController.h */,
@@ -404,6 +422,14 @@
 				BF3BAF711BDB8558009F33D3 /* QRView.m */,
 			);
 			name = QR;
+			sourceTree = "<group>";
+		};
+		BF3BAF7B1BDB89F6009F33D3 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				BF3BAF7C1BDB89F6009F33D3 /* psr_bg_project.png */,
+			);
+			path = Resource;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -488,6 +514,8 @@
 			files = (
 				BF3BAECA1BDB5362009F33D3 /* LaunchScreen.storyboard in Resources */,
 				BF3BAEC71BDB5362009F33D3 /* Assets.xcassets in Resources */,
+				BF3BAF7A1BDB8947009F33D3 /* TanProjectCardView.xib in Resources */,
+				BF3BAF7D1BDB89F6009F33D3 /* psr_bg_project.png in Resources */,
 				BF3BAEC51BDB5362009F33D3 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -509,6 +537,7 @@
 				BF3BAF4E1BDB6BC2009F33D3 /* UIImage+GIF.m in Sources */,
 				BF3BAF201BDB60B4009F33D3 /* TANDataCenter.m in Sources */,
 				BF3BAF071BDB5EBB009F33D3 /* AFHTTPRequestOperation.m in Sources */,
+				BF3BAF791BDB8947009F33D3 /* TanProjectCardView.m in Sources */,
 				BF3BAF141BDB5EBB009F33D3 /* UIImageView+AFNetworking.m in Sources */,
 				BF3BAF081BDB5EBB009F33D3 /* AFHTTPRequestOperationManager.m in Sources */,
 				BF3BAF151BDB5EBB009F33D3 /* UIProgressView+AFNetworking.m in Sources */,
@@ -536,6 +565,7 @@
 				BF3BAF471BDB6BC2009F33D3 /* SDWebImageCompat.m in Sources */,
 				BF3BAF1D1BDB5F1C009F33D3 /* TANOptionsVC.m in Sources */,
 				BF3BAF751BDB8558009F33D3 /* QRView.m in Sources */,
+				BF3BAF801BDB94C1009F33D3 /* PSFormatter.m in Sources */,
 				BF3BAF0D1BDB5EBB009F33D3 /* AFURLRequestSerialization.m in Sources */,
 				BF3BAF551BDB75DD009F33D3 /* TanProjectListVC.m in Sources */,
 				BF3BAF231BDB64DF009F33D3 /* TanBaseItem.m in Sources */,
