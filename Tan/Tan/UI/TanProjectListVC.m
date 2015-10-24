@@ -136,11 +136,13 @@ ZLSwipeableViewDelegate>
     addressLabel.text = [(TanProjectCardView *)swipeableView.topSwipeableView project].address;
 
     [cardView selectedCardHandler:^(id sender) {
+        
+        [TANDataCenter dataCenter].tanProject = cardView.project;
+        
         UIStoryboard *mainStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
         TanProjectDetailVC * detailVC = [mainStoryBoard instantiateViewControllerWithIdentifier:@"TanProjectDetailVC"];
         [self.navigationController pushViewController:detailVC animated:YES];
         
-        [detailVC loadDetailWithID:cardView.project.ID];
     }];
     
     return cardView;
@@ -159,13 +161,13 @@ ZLSwipeableViewDelegate>
 
 - (IBAction)walkingButtonAction:(id)sender {
     [walkingButton setImage:[self selectedImage:walking] forState:UIControlStateNormal];
-    [cyclingButton setImage:[self unSelectedImage:walking] forState:UIControlStateNormal];
+    [cyclingButton setImage:[self unSelectedImage:cycling] forState:UIControlStateNormal];
     [drivingButton setImage:[self unSelectedImage:vehicle] forState:UIControlStateNormal];
 }
 
 - (IBAction)drivingButtonAction:(id)sender {
     [drivingButton setImage:[self selectedImage:vehicle] forState:UIControlStateNormal];
-     [cyclingButton setImage:[self unSelectedImage:walking] forState:UIControlStateNormal];
+     [cyclingButton setImage:[self unSelectedImage:cycling] forState:UIControlStateNormal];
      [walkingButton setImage:[self unSelectedImage:walking] forState:UIControlStateNormal];
 }
 

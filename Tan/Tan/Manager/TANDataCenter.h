@@ -17,10 +17,13 @@
 
 extern NSString * const TANDidGetProjectNotification;
 
+@class TanProject;
 @interface TANDataCenter : NSObject
 
 @property (nonatomic, weak) id<TANDataCenterDelegate> delegate;
 @property (strong,nonatomic) NSArray * projects;
+@property (strong,nonatomic) TanProject *tanProject;
+
 + (TANDataCenter *)dataCenter;
 - (void)startFetchProjects:(NSArray*)coordinates;
 - (void)startProject:(NSNumber *)projectID;

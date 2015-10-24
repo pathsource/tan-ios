@@ -34,16 +34,18 @@
 {
     [super viewWillAppear:animated];
     
-    [detailWebView loadRequest:request];
+    [self loadDetailWebPage];
     
     startButton.backgroundColor = [UIColor colorFromRGB:0x3dafd8];
     [startButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [startButton setTitle:@"开始" forState:UIControlStateNormal];
 }
 
-- (void)loadDetailWithID:(NSNumber *)ID
+- (void)loadDetailWebPage
 {
+    NSNumber *ID = [TANDataCenter dataCenter].tanProject.ID;
     request = [NSURLRequest requestWithURL:[NSURL URLWithString:[TANDataCenter projectDetailApi:ID]]];
+    [detailWebView loadRequest:request];
     
 }
 

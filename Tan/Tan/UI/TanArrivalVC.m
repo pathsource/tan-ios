@@ -39,14 +39,27 @@
     __weak IBOutlet UILabel *arrivelLabel;
     
     __weak IBOutlet UILabel *giveupLabel;
+    
+    __weak IBOutlet UIImageView *bgImageView;
+    __weak IBOutlet UIView *contentView;
 }
 @end
 
 @implementation TanArrivalVC
+{
+    NSUInteger totalStepsCount;
+}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    contentView.layer.cornerRadius = 5.f;
+    
+    bgImageView.maskView = [[UIView alloc] initWithFrame:bgImageView.bounds];
+    bgImageView.maskView.backgroundColor = [[UIColor colorFromRGB:0x3e3e3e] colorWithAlphaComponent:0.6];
+    
+    [bgImageView sd_setImageWithURL:[NSURL URLWithString:[TANDataCenter dataCenter].tanProject.image]];
     
     arrivalButton.backgroundColor = [UIColor colorFromRGB:0x50af37];
     [arrivalButton setTitle:@"到达 " forState:UIControlStateNormal];
@@ -61,9 +74,44 @@
     giveupLabel.text = @"回答主页面";
     giveupLabel.font = [UIFont systemFontOfSize:11];
     giveupLabel.textColor = [UIColor whiteColor];
+    
+    [self addLineOnBottom:nameLabel];
+    
+    [self requestSteps];
+    
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
 
+}
+
+- (void)addLineOnBottom:(UIView *)view
+{
+    CALayer * lineLayer = [CALayer layer];
+    lineLayer.frame = CGRectMake(0, CGRectGetHeight(view.bounds) - 1, CGRectGetWidth(view.bounds), 1);
+    [view.layer addSublayer:lineLayer];
+    
+    lineLayer.backgroundColor = [UIColor lightGrayColor].CGColor;
+    
+    view.clipsToBounds = YES;
+}
+
+- (void)setUpData
+{
+    TanProject * project = [TANDataCenter dataCenter].tanProject;
+    nameLabel.text = project.address;
+    
+    stepsLabel.text = [NSString stringWithFormat:@"当前已经行走%ld步",totalStepsCount];
+    caloriesLabel.text = [NSString stringWithFormat:@"相当于大约%ld大卡",totalStepsCount/28];
+    
+    NSString * perUnit = [[TANDataCenter dataCenter].tanProject.unit_steps_count isKindOfClass:[NSString class]]?[TANDataCenter dataCenter].tanProject.unit_steps_count:@"0";
+    double count = totalStepsCount/perUnit.integerValue;
+    donateLabel.text = [NSString stringWithFormat:@"到达之后，当前步数折合为%.1f本书",count];
+    
+    donationDesLabel.text = @"您每走1000步，PathSource将为基金捐献一元钱，以购买书籍。";
+}
 
 - (IBAction)arrivalButtonAction:(id)sender {
     [TANLocation share].delegate = self;
@@ -143,6 +191,9 @@
                                                                  {
                                                                      double step = [quantitySample.quantity doubleValueForUnit:([HKUnit countUnit])];
                                                                      totalSteps = totalSteps + step;
+                                                                     
+                                                                     totalStepsCount = totalSteps;
+                                                                     [self performSelectorOnMainThread:@selector(setUpData) withObject:nil waitUntilDone:YES];
                                                                  }
                                                                  
                                                              }

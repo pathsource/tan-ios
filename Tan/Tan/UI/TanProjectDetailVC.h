@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface TanProjectDetailVC : UIViewController
-- (void)loadDetailWithID:(NSNumber *)ID;
+- (void)loadDetailWebPage;
 @end
