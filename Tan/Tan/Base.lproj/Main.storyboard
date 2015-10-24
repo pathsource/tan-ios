@@ -189,10 +189,10 @@
             </objects>
             <point key="canvasLocation" x="686" y="373"/>
         </scene>
-        <!--View Controller-->
+        <!--Tan Project DetailVC-->
         <scene sceneID="M8c-sY-XcA">
             <objects>
-                <viewController id="UHR-mq-JQd" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TanProjectDetailVC" id="UHR-mq-JQd" customClass="TanProjectDetailVC" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="vf8-5z-paP"/>
                         <viewControllerLayoutGuide type="bottom" id="fH5-EI-gu7"/>
@@ -200,9 +200,25 @@
                     <view key="view" contentMode="scaleToFill" id="SiR-wT-xcr">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mWz-KA-Gbt">
+                                <rect key="frame" x="0.0" y="20" width="600" height="580"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
+                            </webView>
+                        </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="mWz-KA-Gbt" firstAttribute="top" secondItem="vf8-5z-paP" secondAttribute="bottom" id="Dkt-9J-6RP"/>
+                            <constraint firstItem="mWz-KA-Gbt" firstAttribute="leading" secondItem="SiR-wT-xcr" secondAttribute="leading" id="Jgx-0f-PME"/>
+                            <constraint firstAttribute="trailing" secondItem="mWz-KA-Gbt" secondAttribute="trailing" id="bQA-IN-Eu7"/>
+                            <constraint firstItem="fH5-EI-gu7" firstAttribute="top" secondItem="mWz-KA-Gbt" secondAttribute="bottom" id="wy0-4A-aMr"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="detailWebView" destination="mWz-KA-Gbt" id="ZgV-Qh-NcD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ilm-Vl-Q1G" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -10,6 +10,7 @@
 #import "ZLSwipeableView.h"
 #import "TanProjectCardView.h"
 #import "TanDefinition.h"
+#import "TanProjectDetailVC.h"
 
 @interface TanProjectListVC ()<ZLSwipeableViewDataSource,
 ZLSwipeableViewDelegate>
@@ -119,7 +120,11 @@ ZLSwipeableViewDelegate>
     cardView.project = self.projects[currentIndex];
 
     [cardView selectedCardHandler:^(id sender) {
+        UIStoryboard *mainStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        TanProjectDetailVC * detailVC = [mainStoryBoard instantiateViewControllerWithIdentifier:@"TanProjectDetailVC"];
+        [self.navigationController pushViewController:detailVC animated:YES];
         
+        [detailVC loadDetailWithID:cardView.project.ID];
     }];
     
     return cardView;

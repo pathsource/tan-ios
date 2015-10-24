@@ -12,6 +12,7 @@
 
 static NSString * const serverStr = @"http://tan.maimoe.com";
 static NSString * const projectsStr = @"/projects.json";
+static NSString * const detailStr = @"/projects/";
 
 NSString * const TANDidGetProjectNotification = @"TANDidGetProjectNotification";
 
@@ -35,6 +36,11 @@ static TANDataCenter * dataCenter = nil;
 + (NSString *)projectApi
 {
     return [serverStr stringByAppendingString:projectsStr];
+}
+
++ (NSString *)projectDetailApi:(NSNumber *)projectID
+{
+    return [serverStr stringByAppendingFormat:@"%@%@",detailStr,projectID];
 }
 
 - (void)fetchProjects

@@ -18,6 +18,7 @@
     __weak IBOutlet UIImageView *projectImageView;
     __weak IBOutlet UILabel *desLabel;
     
+    __weak IBOutlet UILabel *distanceLabel;
 }
 
 @end
@@ -46,6 +47,7 @@
     _project = project;
     
     desLabel.text = project.name;
+    distanceLabel.text = project.distance;
     
     [projectImageView sd_setImageWithURL:[NSURL URLWithString:project.image] placeholderImage:nil];
 }

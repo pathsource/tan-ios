@@ -62,6 +62,7 @@
 		BF3BAF7D1BDB89F6009F33D3 /* psr_bg_project.png in Resources */ = {isa = PBXBuildFile; fileRef = BF3BAF7C1BDB89F6009F33D3 /* psr_bg_project.png */; };
 		BF3BAF831BDB9821009F33D3 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF3BAF821BDB9821009F33D3 /* HealthKit.framework */; };
 		BF3BAF851BDB9828009F33D3 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF3BAF841BDB9828009F33D3 /* MapKit.framework */; };
+		BF3BAF881BDBA7B5009F33D3 /* TanProjectDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BF3BAF871BDBA7B5009F33D3 /* TanProjectDetailVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -185,6 +186,8 @@
 		BF3BAF811BDB952A009F33D3 /* TanDefinition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TanDefinition.h; sourceTree = "<group>"; };
 		BF3BAF821BDB9821009F33D3 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		BF3BAF841BDB9828009F33D3 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		BF3BAF861BDBA7B5009F33D3 /* TanProjectDetailVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TanProjectDetailVC.h; sourceTree = "<group>"; };
+		BF3BAF871BDBA7B5009F33D3 /* TanProjectDetailVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TanProjectDetailVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -361,6 +364,8 @@
 				BF3BAF1C1BDB5F1C009F33D3 /* TANOptionsVC.m */,
 				BF3BAF531BDB75DD009F33D3 /* TanProjectListVC.h */,
 				BF3BAF541BDB75DD009F33D3 /* TanProjectListVC.m */,
+				BF3BAF861BDBA7B5009F33D3 /* TanProjectDetailVC.h */,
+				BF3BAF871BDBA7B5009F33D3 /* TanProjectDetailVC.m */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -579,6 +584,7 @@
 				BF3BAEBF1BDB5362009F33D3 /* AppDelegate.m in Sources */,
 				BF3BAF4B1BDB6BC2009F33D3 /* SDWebImageManager.m in Sources */,
 				BF3BAEBC1BDB5362009F33D3 /* main.m in Sources */,
+				BF3BAF881BDBA7B5009F33D3 /* TanProjectDetailVC.m in Sources */,
 				BF3BAF721BDB8558009F33D3 /* QRItem.m in Sources */,
 				BF3BAF521BDB6BC2009F33D3 /* UIView+WebCacheOperation.m in Sources */,
 				BF3BAF501BDB6BC2009F33D3 /* UIImageView+HighlightedWebCache.m in Sources */,
