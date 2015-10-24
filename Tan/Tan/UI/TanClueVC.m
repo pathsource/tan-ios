@@ -18,6 +18,16 @@
 
 @implementation TanClueVC
 
+- (void)viewDidLoad{
+    [super viewDidLoad];
+    NSString *originStr = @"子龙背后";
+    NSData* originData = [originStr dataUsingEncoding:NSUTF8StringEncoding];
+    
+    NSString* encodeResult = [originData base64EncodedStringWithOptions:NSDataBase64EncodingEndLineWithLineFeed];
+    
+    NSLog(@"encodeResult:%@",encodeResult);
+}
+
 #pragma mark IB Action
 
 - (IBAction)scanClick:(id)sender {
