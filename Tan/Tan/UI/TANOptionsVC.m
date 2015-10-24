@@ -20,7 +20,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    [[TANDataCenter dataCenter] fetchProjects];
+    [[TANDataCenter dataCenter] start];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didGetProject:) name:TANDidGetProjectNotification object:nil];
 }

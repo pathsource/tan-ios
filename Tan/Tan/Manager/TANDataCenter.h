@@ -14,6 +14,7 @@ extern NSString * const TANDidGetProjectNotification;
 
 @property (strong,nonatomic) NSArray * projects;
 + (TANDataCenter *)dataCenter;
+- (void)start;
 - (void)fetchProjects;
 
 + (NSString *)projectDetailApi:(NSNumber *)projectID;
