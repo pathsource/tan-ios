@@ -17,7 +17,7 @@
     __weak IBOutlet UIButton *startButton;
     
     __weak IBOutlet UIActivityIndicatorView *loadingIndicator;
-    
+    BOOL loading;
 }
 @end
 
@@ -55,6 +55,8 @@
 
 
 - (IBAction)startButtonAction:(id)sender {
+    if (loading) return;
+    loading = true;
     [TANDataCenter dataCenter].delegate = self;
     [[TANDataCenter dataCenter] startProject:@(2)];
 }
@@ -62,6 +64,7 @@
 #pragma mark TANDataCenterDelegate
 - (void)startResult:(BOOL)success;
 {
+    loading = false;
     [self performSegueWithIdentifier:@"goArrival" sender:self];
 }
 

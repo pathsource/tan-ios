@@ -46,6 +46,7 @@
     __weak IBOutlet UIView *circleView;
     
     __weak IBOutlet UIImageView *topProgressImage;
+    BOOL loading;
     
 }
 @end
@@ -145,6 +146,8 @@
 #pragma mark TANLocationDelegate
 - (void)getLocation:(NSArray*)coordinates
 {
+    if (loading) return;
+    loading = true;
     [TANDataCenter dataCenter].delegate = self;
     [[TANDataCenter dataCenter] startCheckin:@(2) withCoordinates:coordinates];
 }
@@ -152,6 +155,7 @@
 #pragma mark TANDataCenterDelegate
 - (void)checkinResult:(BOOL)success withContent:(NSString*)content andHint:(NSString*)hint
 {
+    loading = false;
     if (success) {
         [self performSegueWithIdentifier:@"goClue" sender:self];
     }

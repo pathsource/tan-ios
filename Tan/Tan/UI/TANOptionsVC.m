@@ -11,6 +11,7 @@
 #import "TANLocation.h"
 
 @interface TANOptionsVC () <TANLocationDelegate>
+
 @property (weak, nonatomic) IBOutlet UIButton *walkingButton;
 @property (weak, nonatomic) IBOutlet UIButton *vehicleButton;
 @property (weak, nonatomic) IBOutlet UIButton *cyclingButton;
@@ -23,11 +24,6 @@
     // Do any additional setup after loading the view, typically from a nib.
     
     self.navigationController.navigationBarHidden = YES;
-    
-    [TANLocation share].delegate = self;
-    [[TANLocation share] startGetLocation];
-    
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didGetProject:) name:TANDidGetProjectNotification object:nil];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -38,8 +34,7 @@
 - (void)didGetProject:(NSNotification *)not
 {
     if (not != nil) {
-        
-        
+        [self performSegueWithIdentifier:@"goProjectList" sender:self];
         [[NSNotificationCenter defaultCenter] removeObserver:self];
     }
 }
@@ -52,17 +47,25 @@
 
 #pragma mark ====== button actions ======
 - (IBAction)walkingButtonAction:(id)sender {
-    [TANDataCenter dataCenter].type = TANTypeWalk;
+    [self getProjectList:TANTypeWalk];
 }
 
 - (IBAction)cyclingButtonAction:(id)sender {
-    [TANDataCenter dataCenter].type = TANTypeCycling;
+    [self getProjectList:TANTypeCycling];
 }
 
 - (IBAction)vehicleButtonAction:(id)sender {
-    [TANDataCenter dataCenter].type = TANTypeVehicle;
+    [self getProjectList:TANTypeVehicle];
 }
 
+- (void)getProjectList:(TANType)type
+{
+    [TANLocation share].delegate = self;
+    [TANDataCenter dataCenter].type = type;
+    [[TANLocation share] startGetLocation];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didGetProject:) name:TANDidGetProjectNotification object:nil];
+}
 #pragma mark === UIViewControllerTransitioningDelegate
 
 

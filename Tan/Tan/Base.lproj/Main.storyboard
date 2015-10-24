@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="T9i-82-PcC">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="T9i-82-PcC">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
@@ -40,7 +40,6 @@
                                 <state key="normal" backgroundImage="list_top_selected_walking"/>
                                 <connections>
                                     <action selector="walkingButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mnD-KU-YVc"/>
-                                    <segue destination="TgQ-F5-eCc" kind="show" id="gKG-ed-RPY"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JrU-7u-bP8">
@@ -98,6 +97,7 @@
                         <outlet property="cyclingButton" destination="JrU-7u-bP8" id="Kgp-XJ-Qla"/>
                         <outlet property="vehicleButton" destination="B34-8X-nM8" id="MxS-hK-TBP"/>
                         <outlet property="walkingButton" destination="4XA-jC-gJ9" id="f9n-ww-3Yz"/>
+                        <segue destination="TgQ-F5-eCc" kind="show" identifier="goProjectList" id="Bar-vN-bbn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -693,6 +693,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" alpha="0.69999999999999996" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SaH-BB-CUD">
+                                <rect key="frame" x="0.0" y="-20" width="600" height="690"/>
+                                <animations/>
+                            </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ru1-D6-614">
                                 <rect key="frame" x="140" y="153" width="320" height="417"/>
                                 <subviews>
@@ -731,14 +735,14 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5a2Q6b6Z6IOM5ZCO" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nhc-ET-gYn">
-                                        <rect key="frame" x="58" y="167" width="204" height="21"/>
+                                        <rect key="frame" x="58" y="167.5" width="204" height="20.5"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="提示" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QFM-3r-gGa">
-                                        <rect key="frame" x="143" y="271" width="34" height="17"/>
+                                        <rect key="frame" x="143" y="271" width="34" height="16.5"/>
                                         <animations/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="34" id="NV0-cC-9pA"/>
@@ -748,7 +752,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Base64" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YVk-TF-pfD">
-                                        <rect key="frame" x="131" y="295" width="59" height="21"/>
+                                        <rect key="frame" x="131" y="294.5" width="59" height="21"/>
                                         <animations/>
                                         <color key="backgroundColor" red="0.32156862749999998" green="0.75686274509999996" blue="0.91372549020000005" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
@@ -792,10 +796,6 @@
                                     <constraint firstAttribute="width" constant="91" id="Xg6-Tv-Fa4"/>
                                 </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" alpha="0.69999998807907104" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SaH-BB-CUD">
-                                <rect key="frame" x="0.0" y="-20" width="600" height="680"/>
-                                <animations/>
-                            </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clue_top" translatesAutoresizingMaskIntoConstraints="NO" id="cGs-vy-tMy">
                                 <rect key="frame" x="139" y="55" width="321" height="40"/>
                                 <animations/>
@@ -806,9 +806,10 @@
                             </imageView>
                         </subviews>
                         <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Ru1-D6-614" firstAttribute="top" secondItem="FK2-jU-sYS" secondAttribute="bottom" constant="-50" id="4si-9G-XzY"/>
-                            <constraint firstAttribute="bottom" secondItem="SaH-BB-CUD" secondAttribute="bottom" constant="-60" id="5MB-SW-ULK"/>
+                            <constraint firstAttribute="bottom" secondItem="SaH-BB-CUD" secondAttribute="bottom" constant="-70" id="5MB-SW-ULK"/>
                             <constraint firstItem="SaH-BB-CUD" firstAttribute="top" secondItem="rDr-6N-wLR" secondAttribute="top" constant="-20" id="83X-62-bF5"/>
                             <constraint firstItem="Ru1-D6-614" firstAttribute="top" secondItem="Q0i-5z-rrR" secondAttribute="bottom" constant="133" id="ARH-eR-Khb"/>
                             <constraint firstItem="SaH-BB-CUD" firstAttribute="leading" secondItem="rDr-6N-wLR" secondAttribute="leading" id="MbA-Np-bnt"/>
