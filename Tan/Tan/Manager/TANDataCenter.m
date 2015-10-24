@@ -9,6 +9,8 @@
 #import "TANDataCenter.h"
 #import "AFNetworking.h"
 
+static NSString * const serverStr = @"http://tan.maimoe.com/projects.json";
+
 static TANDataCenter * dataCenter = nil;
 
 @implementation TANDataCenter

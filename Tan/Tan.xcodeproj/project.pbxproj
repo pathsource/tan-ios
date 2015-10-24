@@ -60,6 +60,8 @@
 		BF3BAF791BDB8947009F33D3 /* TanProjectCardView.m in Sources */ = {isa = PBXBuildFile; fileRef = BF3BAF771BDB8947009F33D3 /* TanProjectCardView.m */; };
 		BF3BAF7A1BDB8947009F33D3 /* TanProjectCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF3BAF781BDB8947009F33D3 /* TanProjectCardView.xib */; };
 		BF3BAF7D1BDB89F6009F33D3 /* psr_bg_project.png in Resources */ = {isa = PBXBuildFile; fileRef = BF3BAF7C1BDB89F6009F33D3 /* psr_bg_project.png */; };
+		BF3BAF831BDB9821009F33D3 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF3BAF821BDB9821009F33D3 /* HealthKit.framework */; };
+		BF3BAF851BDB9828009F33D3 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF3BAF841BDB9828009F33D3 /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -181,6 +183,8 @@
 		BF3BAF781BDB8947009F33D3 /* TanProjectCardView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TanProjectCardView.xib; sourceTree = "<group>"; };
 		BF3BAF7C1BDB89F6009F33D3 /* psr_bg_project.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = psr_bg_project.png; sourceTree = "<group>"; };
 		BF3BAF811BDB952A009F33D3 /* TanDefinition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TanDefinition.h; sourceTree = "<group>"; };
+		BF3BAF821BDB9821009F33D3 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
+		BF3BAF841BDB9828009F33D3 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,6 +192,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF3BAF851BDB9828009F33D3 /* MapKit.framework in Frameworks */,
+				BF3BAF831BDB9821009F33D3 /* HealthKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -204,6 +210,8 @@
 		BF3BAEAE1BDB5362009F33D3 = {
 			isa = PBXGroup;
 			children = (
+				BF3BAF841BDB9828009F33D3 /* MapKit.framework */,
+				BF3BAF821BDB9821009F33D3 /* HealthKit.framework */,
 				BF3BAEB91BDB5362009F33D3 /* Tan */,
 				BF3BAED31BDB5362009F33D3 /* TanUITests */,
 				BF3BAEB81BDB5362009F33D3 /* Products */,
