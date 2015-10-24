@@ -72,7 +72,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="psr_bg_project.png" translatesAutoresizingMaskIntoConstraints="NO" id="hXV-im-qsR">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="List_bg.png" translatesAutoresizingMaskIntoConstraints="NO" id="hXV-im-qsR">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <animations/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -338,6 +338,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="psr_bg_project.png" width="750" height="1334"/>
+        <image name="List_bg.png" width="750" height="1334"/>
     </resources>
 </document>

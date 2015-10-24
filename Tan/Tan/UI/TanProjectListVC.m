@@ -132,6 +132,7 @@ ZLSwipeableViewDelegate>
 
 #pragma mark ====== ButtonAction ======
 - (IBAction)locationButtonAction:(id)sender {
+    
 }
 
 - (IBAction)cyclingButtonAction:(id)sender {

@@ -8,6 +8,7 @@
 
 #import "TanArrivalVC.h"
 #import "TanDefinition.h"
+#import "TanProjectListVC.h"
 
 @interface TanArrivalVC()
 {
@@ -24,14 +25,24 @@
     [super viewDidLoad];
     
     arrivalButton.backgroundColor = [UIColor colorFromRGB:0x50af37];
+    [arrivalButton setTitle:@"到达" forState:UIControlStateNormal];
     
     giveupButton.backgroundColor =[UIColor colorFromRGB:0xb6b6b6];
+    [giveupButton setTitle:@"放弃" forState:UIControlStateNormal];
 }
 
 - (IBAction)arrivalButtonAction:(id)sender {
+    
+    
+    
 }
 
 - (IBAction)giveUpButtonAction:(id)sender {
+    [self.navigationController.viewControllers enumerateObjectsUsingBlock:^(__kindof UIViewController * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        if ([obj isKindOfClass:[TanProjectListVC class]]) {
+            [self.navigationController popToViewController:obj animated:YES];
+        }
+    }];
 }
 
 @end

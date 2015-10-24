@@ -64,8 +64,8 @@
 		BF3BAF881BDBA7B5009F33D3 /* TanProjectDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BF3BAF871BDBA7B5009F33D3 /* TanProjectDetailVC.m */; };
 		BF3BAF8C1BDBB3A3009F33D3 /* UIColor+Tan.m in Sources */ = {isa = PBXBuildFile; fileRef = BF3BAF8B1BDBB3A3009F33D3 /* UIColor+Tan.m */; };
 		BF3BAF8E1BDBB5C4009F33D3 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF3BAF8D1BDBB5C4009F33D3 /* CoreLocation.framework */; };
-		BF3BAF901BDBB6E2009F33D3 /* psr_bg_project.png in Resources */ = {isa = PBXBuildFile; fileRef = BF3BAF8F1BDBB6E2009F33D3 /* psr_bg_project.png */; };
 		BF3BAF931BDBB869009F33D3 /* TanArrivalVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BF3BAF921BDBB869009F33D3 /* TanArrivalVC.m */; };
+		BF3BAF981BDBCA13009F33D3 /* List_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = BF3BAF971BDBCA13009F33D3 /* List_bg.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -193,9 +193,9 @@
 		BF3BAF8A1BDBB3A3009F33D3 /* UIColor+Tan.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Tan.h"; sourceTree = "<group>"; };
 		BF3BAF8B1BDBB3A3009F33D3 /* UIColor+Tan.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Tan.m"; sourceTree = "<group>"; };
 		BF3BAF8D1BDBB5C4009F33D3 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		BF3BAF8F1BDBB6E2009F33D3 /* psr_bg_project.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = psr_bg_project.png; path = ../../../../../../Downloads/psr_bg_project.png; sourceTree = "<group>"; };
 		BF3BAF911BDBB869009F33D3 /* TanArrivalVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TanArrivalVC.h; sourceTree = "<group>"; };
 		BF3BAF921BDBB869009F33D3 /* TanArrivalVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TanArrivalVC.m; sourceTree = "<group>"; };
+		BF3BAF971BDBCA13009F33D3 /* List_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = List_bg.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -246,8 +246,8 @@
 				BF3BAEBD1BDB5362009F33D3 /* AppDelegate.h */,
 				BF3BAEBE1BDB5362009F33D3 /* AppDelegate.m */,
 				BF3BAF811BDB952A009F33D3 /* TanDefinition.h */,
+				BF3BAF941BDBC75F009F33D3 /* Resource */,
 				BF3BAF891BDBB376009F33D3 /* Categories */,
-				BF3BAF7B1BDB89F6009F33D3 /* Resource */,
 				BF3BAF181BDB5EE9009F33D3 /* DataModel */,
 				BF3BAF191BDB5EE9009F33D3 /* Manager */,
 				BF3BAF1A1BDB5EE9009F33D3 /* UI */,
@@ -445,14 +445,6 @@
 			name = QR;
 			sourceTree = "<group>";
 		};
-		BF3BAF7B1BDB89F6009F33D3 /* Resource */ = {
-			isa = PBXGroup;
-			children = (
-				BF3BAF8F1BDBB6E2009F33D3 /* psr_bg_project.png */,
-			);
-			path = Resource;
-			sourceTree = "<group>";
-		};
 		BF3BAF891BDBB376009F33D3 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
@@ -460,6 +452,14 @@
 				BF3BAF8B1BDBB3A3009F33D3 /* UIColor+Tan.m */,
 			);
 			path = Categories;
+			sourceTree = "<group>";
+		};
+		BF3BAF941BDBC75F009F33D3 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				BF3BAF971BDBCA13009F33D3 /* List_bg.png */,
+			);
+			path = Resource;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -544,8 +544,8 @@
 			files = (
 				BF3BAECA1BDB5362009F33D3 /* LaunchScreen.storyboard in Resources */,
 				BF3BAEC71BDB5362009F33D3 /* Assets.xcassets in Resources */,
+				BF3BAF981BDBCA13009F33D3 /* List_bg.png in Resources */,
 				BF3BAF7A1BDB8947009F33D3 /* TanProjectCardView.xib in Resources */,
-				BF3BAF901BDBB6E2009F33D3 /* psr_bg_project.png in Resources */,
 				BF3BAEC51BDB5362009F33D3 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
