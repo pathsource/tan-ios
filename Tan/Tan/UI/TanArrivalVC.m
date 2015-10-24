@@ -119,12 +119,23 @@
     TanProject * project = [TANDataCenter dataCenter].tanProject;
     nameLabel.text = [NSString stringWithFormat:@"目的地:%@",project.address];
     
-    stepsLabel.text = [NSString stringWithFormat:@"当前已经行走%ld步",totalStepsCount];
-    caloriesLabel.text = [NSString stringWithFormat:@"相当于大约%ld大卡",totalStepsCount/28];
+    NSMutableAttributedString * attributedSteps = [[NSMutableAttributedString alloc] initWithString:[NSString stringWithFormat:@"当前已经行走%ld步",totalStepsCount]];
+    [attributedSteps addAttribute:NSForegroundColorAttributeName value:[UIColor blueColor] range:NSMakeRange(6, attributedSteps.length - 7)];
+    stepsLabel.attributedText = attributedSteps;
+    
+//    caloriesLabel.text = [NSString stringWithFormat:@"相当于大约%ld大卡",totalStepsCount/28];
+    
+    NSMutableAttributedString * attributedCalories = [[NSMutableAttributedString alloc] initWithString: [NSString stringWithFormat:@"相当于大约%ld大卡",totalStepsCount/28]];
+    [attributedCalories addAttribute:NSForegroundColorAttributeName value:[UIColor colorFromRGB:0xf47a31] range:NSMakeRange(5, attributedCalories.length - 7)];
+    caloriesLabel.attributedText = attributedCalories;
+    
     
     NSString * perUnit = [[TANDataCenter dataCenter].tanProject.unit_steps_count isKindOfClass:[NSNumber class]]?[TANDataCenter dataCenter].tanProject.unit_steps_count:@"0";
-    double count = totalStepsCount/perUnit.integerValue;
-    donateLabel.text = [NSString stringWithFormat:@"到达之后，当前步数折合为%.1f本书",count];
+    double count = (totalStepsCount/perUnit.integerValue)*1.0;
+    
+    NSMutableAttributedString * attributedBook = [[NSMutableAttributedString alloc] initWithString: [NSString stringWithFormat:@"到达之后，当前步数折合为%.1f本书",count]];
+    [attributedBook addAttribute:NSForegroundColorAttributeName value:[UIColor colorFromRGB:0x50af37] range:NSMakeRange(12, attributedBook.length - 14)];
+    donateLabel.attributedText = attributedBook;
 }
 
 - (IBAction)arrivalButtonAction:(id)sender {

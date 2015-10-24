@@ -473,7 +473,7 @@
                                         <animations/>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="book_arrival" translatesAutoresizingMaskIntoConstraints="NO" id="Gau-Hq-sWx">
-                                        <rect key="frame" x="40" y="182" width="81" height="73"/>
+                                        <rect key="frame" x="230" y="182" width="81" height="73"/>
                                         <animations/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="73" id="Ygd-Na-Ci9"/>
@@ -522,6 +522,7 @@
                                     <constraint firstItem="Sa0-H7-qNG" firstAttribute="leading" secondItem="KlF-3D-NcG" secondAttribute="leading" constant="40" id="AZK-qQ-vva"/>
                                     <constraint firstItem="0bJ-H7-7wT" firstAttribute="top" secondItem="Sa0-H7-qNG" secondAttribute="top" id="Dbt-0E-MXm"/>
                                     <constraint firstItem="MWT-x6-M47" firstAttribute="width" secondItem="0bJ-H7-7wT" secondAttribute="width" id="OLQ-Cb-tRU"/>
+                                    <constraint firstItem="Gau-Hq-sWx" firstAttribute="centerX" secondItem="KlF-3D-NcG" secondAttribute="centerX" id="Siu-ox-s24"/>
                                     <constraint firstItem="5yB-cK-ova" firstAttribute="top" secondItem="KlF-3D-NcG" secondAttribute="top" constant="30" id="Tzb-y0-amn"/>
                                     <constraint firstItem="slB-W5-CGY" firstAttribute="height" secondItem="Sa0-H7-qNG" secondAttribute="height" id="Unk-VP-bPz"/>
                                     <constraint firstItem="Sa0-H7-qNG" firstAttribute="top" secondItem="5yB-cK-ova" secondAttribute="bottom" constant="20" id="agp-tI-GeG"/>
@@ -535,6 +536,11 @@
                                     <constraint firstItem="OgF-6B-sC5" firstAttribute="leading" secondItem="KlF-3D-NcG" secondAttribute="leading" constant="20" id="wrQ-KC-oxj"/>
                                     <constraint firstItem="MWT-x6-M47" firstAttribute="top" secondItem="slB-W5-CGY" secondAttribute="top" id="wvU-6g-MED"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="2n8-un-Bfr"/>
+                                    </mask>
+                                </variation>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xiD-xy-y7J">
                                 <rect key="frame" x="273" y="111" width="56" height="56"/>
