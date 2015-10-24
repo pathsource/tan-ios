@@ -275,7 +275,6 @@
                                 <state key="normal" title="Button"/>
                                 <connections>
                                     <action selector="startButtonAction:" destination="UHR-mq-JQd" eventType="touchUpInside" id="mRK-aK-bQR"/>
-                                    <segue destination="aKt-X9-Kpj" kind="show" id="qCL-6U-kaU"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -308,6 +307,7 @@
                         <outlet property="detailWebView" destination="mWz-KA-Gbt" id="ZgV-Qh-NcD"/>
                         <outlet property="loadingIndicator" destination="der-MD-Qoh" id="2zi-th-AyW"/>
                         <outlet property="startButton" destination="4IG-66-PA4" id="MyP-nc-y6N"/>
+                        <segue destination="aKt-X9-Kpj" kind="show" identifier="goArrival" id="C21-fi-TXG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ilm-Vl-Q1G" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -511,7 +511,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S8m-Ca-DJD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="295" y="1033"/>
+            <point key="canvasLocation" x="287" y="1127"/>
         </scene>
         <!--Tan ClueVC-->
         <scene sceneID="Lyq-Xk-0T8">
@@ -525,17 +525,56 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wXp-xG-FSZ">
-                                <rect key="frame" x="177" y="268" width="35" height="30"/>
-                                <animations/>
-                                <state key="normal" title="Scan"/>
-                                <connections>
-                                    <action selector="scanClick:" destination="4Fw-wE-uTJ" eventType="touchUpInside" id="EKU-bP-y7A"/>
-                                </connections>
-                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ru1-D6-614">
+                                <rect key="frame" x="140" y="153" width="320" height="417"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wXp-xG-FSZ">
+                                        <rect key="frame" x="0.0" y="362" width="320" height="55"/>
+                                        <animations/>
+                                        <color key="backgroundColor" red="0.31372549019607843" green="0.68627450980392157" blue="0.21568627450980393" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="55" id="QmO-4h-2oq"/>
+                                        </constraints>
+                                        <state key="normal" title="扫一扫"/>
+                                        <connections>
+                                            <action selector="scanClick:" destination="4Fw-wE-uTJ" eventType="touchUpInside" id="EKU-bP-y7A"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="请根据以下线索在青年教堂内寻找二维码" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3oX-cE-VMz">
+                                        <rect key="frame" x="30" y="60" width="260" height="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="320" id="9Qp-Gg-sPY"/>
+                                    <constraint firstItem="3oX-cE-VMz" firstAttribute="top" secondItem="Ru1-D6-614" secondAttribute="top" constant="60" id="AIT-h5-GjS"/>
+                                    <constraint firstAttribute="bottom" secondItem="wXp-xG-FSZ" secondAttribute="bottom" id="NgE-Hh-gtZ"/>
+                                    <constraint firstAttribute="trailing" secondItem="wXp-xG-FSZ" secondAttribute="trailing" id="Tpj-M1-Ouq"/>
+                                    <constraint firstItem="wXp-xG-FSZ" firstAttribute="leading" secondItem="Ru1-D6-614" secondAttribute="leading" id="YuS-dQ-beU"/>
+                                    <constraint firstItem="3oX-cE-VMz" firstAttribute="leading" secondItem="Ru1-D6-614" secondAttribute="leading" constant="30" id="rS6-Fj-Taz"/>
+                                    <constraint firstAttribute="trailing" secondItem="3oX-cE-VMz" secondAttribute="trailing" constant="30" id="ueZ-YZ-MdS"/>
+                                </constraints>
+                            </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="question_cycling" translatesAutoresizingMaskIntoConstraints="NO" id="FK2-jU-sYS">
+                                <rect key="frame" x="254.5" y="106" width="91" height="91"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="91" id="RTs-kT-BUB"/>
+                                    <constraint firstAttribute="width" constant="91" id="Xg6-Tv-Fa4"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Ru1-D6-614" firstAttribute="top" secondItem="FK2-jU-sYS" secondAttribute="bottom" constant="-44" id="4si-9G-XzY"/>
+                            <constraint firstItem="Ru1-D6-614" firstAttribute="top" secondItem="Q0i-5z-rrR" secondAttribute="bottom" constant="133" id="ARH-eR-Khb"/>
+                            <constraint firstItem="Ru1-D6-614" firstAttribute="centerX" secondItem="rDr-6N-wLR" secondAttribute="centerX" id="T1e-y6-8LQ"/>
+                            <constraint firstItem="FK2-jU-sYS" firstAttribute="centerX" secondItem="Ru1-D6-614" secondAttribute="centerX" id="oUg-c3-UlY"/>
+                            <constraint firstItem="RgO-vG-fnm" firstAttribute="top" secondItem="Ru1-D6-614" secondAttribute="bottom" constant="30" id="trE-WZ-J2d"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h0c-OD-mHE" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -550,5 +589,6 @@
         <image name="list_top_vehicle" width="38" height="38"/>
         <image name="list_top_walking" width="38" height="38"/>
         <image name="nav_icon_left" width="39" height="39"/>
+        <image name="question_cycling" width="91" height="91"/>
     </resources>
 </document>

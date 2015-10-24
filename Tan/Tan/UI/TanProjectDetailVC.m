@@ -8,8 +8,9 @@
 
 #import "TanProjectDetailVC.h"
 #import "TanDefinition.h"
+#import "TANDataCenter.h"
 
-@interface TanProjectDetailVC()
+@interface TanProjectDetailVC() <TANDataCenterDelegate>
 {
     
     __weak IBOutlet UIWebView *detailWebView;
@@ -52,7 +53,14 @@
 
 
 - (IBAction)startButtonAction:(id)sender {
-    
+    [TANDataCenter dataCenter].delegate = self;
+    [[TANDataCenter dataCenter] startProject:@(2)];
+}
+
+#pragma mark TANDataCenterDelegate
+- (void)startResult:(BOOL)success;
+{
+    [self performSegueWithIdentifier:@"goArrival" sender:self];
 }
 
 #pragma mark ====== UIWebViewDelegate ======

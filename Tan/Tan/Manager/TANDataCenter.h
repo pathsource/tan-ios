@@ -10,6 +10,7 @@
 
 @protocol TANDataCenterDelegate <NSObject>
 @optional
+- (void)startResult:(BOOL)success;
 - (void)checkinResult:(BOOL)success withContent:(NSString*)content andHint:(NSString*)hint;
 - (void)validateResult:(BOOL)success;
 @end
@@ -22,6 +23,7 @@ extern NSString * const TANDidGetProjectNotification;
 @property (strong,nonatomic) NSArray * projects;
 + (TANDataCenter *)dataCenter;
 - (void)startFetchProjects:(NSArray*)coordinates;
+- (void)startProject:(NSNumber *)projectID;
 - (void)startCheckin:(NSNumber *)projectID withCoordinates:(NSArray*)coordinates;
 - (void)startValidateAnswer:(NSNumber *)projectID withAnswer:(NSString*)answer;
 

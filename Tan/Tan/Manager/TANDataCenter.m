@@ -43,6 +43,11 @@ static TANDataCenter * dataCenter = nil;
     return [serverStr stringByAppendingFormat:@"%@%@",detailStr,projectID];
 }
 
++ (NSString *)projectStartApi:(NSNumber *)projectID
+{
+    return [serverStr stringByAppendingFormat:@"%@%@/start",detailStr, projectID];
+}
+
 + (NSString *)projectCheckinApi:(NSNumber *)projectID
 {
     return [serverStr stringByAppendingFormat:@"%@%@/checkin",detailStr,projectID];
@@ -52,6 +57,15 @@ static TANDataCenter * dataCenter = nil;
 {
     return [serverStr stringByAppendingFormat:@"%@%@/validate", detailStr, projectID];
 }
+
+- (void)startProject:(NSNumber *)projectID;
+{
+    [[TANDataCenter dataCenter] fetchDataWithType:@"POST" URL:[TANDataCenter projectStartApi:projectID] parameters:nil completion:^(id responseObject) {
+        BOOL success = responseObject[@"success"];
+        [self.delegate startResult:success];
+    }];
+}
+
 
 - (void)startCheckin:(NSNumber *)projectID withCoordinates:(NSArray*)coordinates
 {
