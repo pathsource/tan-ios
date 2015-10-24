@@ -42,6 +42,9 @@
     
     __weak IBOutlet UIImageView *bgImageView;
     __weak IBOutlet UIView *contentView;
+    
+    __weak IBOutlet UIView *circleView;
+    
 }
 @end
 
@@ -54,6 +57,7 @@
 {
     [super viewDidLoad];
     
+    circleView.layer.cornerRadius = CGRectGetWidth(circleView.bounds)/2;
     contentView.layer.cornerRadius = 5.f;
     
     bgImageView.maskView = [[UIView alloc] initWithFrame:bgImageView.bounds];
@@ -75,10 +79,22 @@
     giveupLabel.font = [UIFont systemFontOfSize:11];
     giveupLabel.textColor = [UIColor whiteColor];
     
+    donationDesLabel.font = [UIFont systemFontOfSize:12];
+    donationDesLabel.textColor = [UIColor lightGrayColor];
+    donationDesLabel.text = @"您每走1000步，PathSource将为基金捐献一元钱，以购买书籍。";
+    
     [self addLineOnBottom:nameLabel];
     
     [self requestSteps];
     
+}
+
+- (void)viewWillLayoutSubviews
+{
+    [super viewWillLayoutSubviews];
+    
+    donationImage.clipsToBounds = YES;
+    donationImage.contentMode = UIViewContentModeRedraw;
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -106,11 +122,9 @@
     stepsLabel.text = [NSString stringWithFormat:@"当前已经行走%ld步",totalStepsCount];
     caloriesLabel.text = [NSString stringWithFormat:@"相当于大约%ld大卡",totalStepsCount/28];
     
-    NSString * perUnit = [[TANDataCenter dataCenter].tanProject.unit_steps_count isKindOfClass:[NSString class]]?[TANDataCenter dataCenter].tanProject.unit_steps_count:@"0";
+    NSString * perUnit = [[TANDataCenter dataCenter].tanProject.unit_steps_count isKindOfClass:[NSNumber class]]?[TANDataCenter dataCenter].tanProject.unit_steps_count:@"0";
     double count = totalStepsCount/perUnit.integerValue;
     donateLabel.text = [NSString stringWithFormat:@"到达之后，当前步数折合为%.1f本书",count];
-    
-    donationDesLabel.text = @"您每走1000步，PathSource将为基金捐献一元钱，以购买书籍。";
 }
 
 - (IBAction)arrivalButtonAction:(id)sender {
