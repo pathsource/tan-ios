@@ -66,6 +66,7 @@
 		BF3BAF8E1BDBB5C4009F33D3 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF3BAF8D1BDBB5C4009F33D3 /* CoreLocation.framework */; };
 		BF3BAF931BDBB869009F33D3 /* TanArrivalVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BF3BAF921BDBB869009F33D3 /* TanArrivalVC.m */; };
 		BF3BAF981BDBCA13009F33D3 /* List_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = BF3BAF971BDBCA13009F33D3 /* List_bg.png */; };
+		BF3BAF9B1BDBD994009F33D3 /* TANLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = BF3BAF9A1BDBD994009F33D3 /* TANLocation.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -196,6 +197,8 @@
 		BF3BAF911BDBB869009F33D3 /* TanArrivalVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TanArrivalVC.h; sourceTree = "<group>"; };
 		BF3BAF921BDBB869009F33D3 /* TanArrivalVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TanArrivalVC.m; sourceTree = "<group>"; };
 		BF3BAF971BDBCA13009F33D3 /* List_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = List_bg.png; sourceTree = "<group>"; };
+		BF3BAF991BDBD994009F33D3 /* TANLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TANLocation.h; sourceTree = "<group>"; };
+		BF3BAF9A1BDBD994009F33D3 /* TANLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TANLocation.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -357,6 +360,8 @@
 			children = (
 				BF3BAF1E1BDB60B4009F33D3 /* TANDataCenter.h */,
 				BF3BAF1F1BDB60B4009F33D3 /* TANDataCenter.m */,
+				BF3BAF991BDBD994009F33D3 /* TANLocation.h */,
+				BF3BAF9A1BDBD994009F33D3 /* TANLocation.m */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -568,6 +573,7 @@
 				BF3BAF201BDB60B4009F33D3 /* TANDataCenter.m in Sources */,
 				BF3BAF071BDB5EBB009F33D3 /* AFHTTPRequestOperation.m in Sources */,
 				BF3BAF791BDB8947009F33D3 /* TanProjectCardView.m in Sources */,
+				BF3BAF9B1BDBD994009F33D3 /* TANLocation.m in Sources */,
 				BF3BAF141BDB5EBB009F33D3 /* UIImageView+AFNetworking.m in Sources */,
 				BF3BAF081BDB5EBB009F33D3 /* AFHTTPRequestOperationManager.m in Sources */,
 				BF3BAF151BDB5EBB009F33D3 /* UIProgressView+AFNetworking.m in Sources */,

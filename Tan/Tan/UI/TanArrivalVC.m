@@ -16,6 +16,27 @@
     
     __weak IBOutlet UIButton *giveupButton;
     __weak IBOutlet UIButton *arrivalButton;
+    
+    __weak IBOutlet UILabel *nameLabel;
+    
+    __weak IBOutlet UILabel *stepsLabel;
+    
+    __weak IBOutlet UILabel *caloriesLabel;
+    
+    __weak IBOutlet UILabel *donateLabel;
+    
+    __weak IBOutlet UILabel *donationDesLabel;
+    
+    __weak IBOutlet UIImageView *stepsLogo;
+    
+    __weak IBOutlet UIImageView *caloriesLogo;
+    
+    __weak IBOutlet UIImageView *donationImage;
+    
+    
+    __weak IBOutlet UILabel *arrivelLabel;
+    
+    __weak IBOutlet UILabel *giveupLabel;
 }
 @end
 
@@ -26,11 +47,20 @@
     [super viewDidLoad];
     
     arrivalButton.backgroundColor = [UIColor colorFromRGB:0x50af37];
-    [arrivalButton setTitle:@"到达" forState:UIControlStateNormal];
+    [arrivalButton setTitle:@"到达 " forState:UIControlStateNormal];
+ 
     
     giveupButton.backgroundColor =[UIColor colorFromRGB:0xb6b6b6];
     [giveupButton setTitle:@"放弃" forState:UIControlStateNormal];
+    
+    arrivelLabel.text = @"开始解答谜题";
+    arrivelLabel.font = [UIFont systemFontOfSize:12];
+    
+    giveupLabel.text = @"回答主页面";
+    giveupLabel.font = [UIFont systemFontOfSize:12];
 }
+
+
 
 - (IBAction)arrivalButtonAction:(id)sender {
     [TANLocation share].delegate = self;

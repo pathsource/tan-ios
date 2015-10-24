@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
+@class TanProject;
 @interface TanArrivalVC : UIViewController
 
 @end
