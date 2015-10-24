@@ -36,7 +36,7 @@
     [detailWebView loadRequest:request];
     
     startButton.backgroundColor = [UIColor colorFromRGB:0x3dafd8];
-    startButton.titleLabel.textColor = [UIColor whiteColor];
+    [startButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [startButton setTitle:@"开始" forState:UIControlStateNormal];
 }
 

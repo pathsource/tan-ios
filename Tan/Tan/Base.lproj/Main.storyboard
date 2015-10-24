@@ -86,32 +86,32 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vQq-b7-4fn">
-                                <rect key="frame" x="210" y="55" width="180" height="35"/>
+                                <rect key="frame" x="210" y="55" width="180" height="40"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h37-R1-5PW">
-                                        <rect key="frame" x="32" y="2" width="32" height="32"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h37-R1-5PW">
+                                        <rect key="frame" x="23" y="1" width="38" height="38"/>
                                         <animations/>
-                                        <state key="normal" title="1"/>
+                                        <state key="normal" image="list_top_cycling"/>
                                         <connections>
                                             <action selector="cyclingButtonAction:" destination="TgQ-F5-eCc" eventType="touchUpInside" id="84C-Zd-cGc"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AOo-ck-Bq7">
-                                        <rect key="frame" x="116" y="2" width="32" height="32"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AOo-ck-Bq7">
+                                        <rect key="frame" x="119" y="1" width="38" height="38"/>
                                         <animations/>
-                                        <state key="normal" title="3"/>
+                                        <state key="normal" image="list_top_vehicle"/>
                                         <connections>
                                             <action selector="drivingButtonAction:" destination="TgQ-F5-eCc" eventType="touchUpInside" id="zgT-yF-eR1"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bmx-rF-V4w">
-                                        <rect key="frame" x="74" y="2" width="32" height="32"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bmx-rF-V4w">
+                                        <rect key="frame" x="71" y="1" width="38" height="38"/>
                                         <animations/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="32" id="Ync-FI-CVs"/>
-                                            <constraint firstAttribute="width" constant="32" id="vMV-rh-S13"/>
+                                            <constraint firstAttribute="height" constant="38" id="Ync-FI-CVs"/>
+                                            <constraint firstAttribute="width" constant="38" id="vMV-rh-S13"/>
                                         </constraints>
-                                        <state key="normal" title="2"/>
+                                        <state key="normal" image="list_top_walking"/>
                                         <connections>
                                             <action selector="walkingButtonAction:" destination="TgQ-F5-eCc" eventType="touchUpInside" id="p5x-ft-gdb"/>
                                         </connections>
@@ -130,14 +130,18 @@
                                     <constraint firstItem="Bmx-rF-V4w" firstAttribute="centerY" secondItem="vQq-b7-4fn" secondAttribute="centerY" id="hc2-YG-llf"/>
                                     <constraint firstItem="Bmx-rF-V4w" firstAttribute="centerX" secondItem="vQq-b7-4fn" secondAttribute="centerX" id="jF8-kY-ZsJ"/>
                                     <constraint firstItem="AOo-ck-Bq7" firstAttribute="leading" secondItem="Bmx-rF-V4w" secondAttribute="trailing" constant="10" id="k1O-kJ-oCf"/>
-                                    <constraint firstAttribute="height" constant="35" id="tcr-dm-Ny2"/>
+                                    <constraint firstAttribute="height" constant="40" id="tcr-dm-Ny2"/>
                                     <constraint firstItem="AOo-ck-Bq7" firstAttribute="height" secondItem="Bmx-rF-V4w" secondAttribute="height" id="zzn-n3-ndL"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ihp-22-I6s">
-                                <rect key="frame" x="499" y="55" width="46" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ihp-22-I6s">
+                                <rect key="frame" x="511" y="55" width="34" height="42"/>
                                 <animations/>
-                                <state key="normal" title="Button"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="34" id="lbi-10-Fr6"/>
+                                    <constraint firstAttribute="height" constant="42" id="u2G-8O-owl"/>
+                                </constraints>
+                                <state key="normal" image="Nav_location_icon"/>
                                 <connections>
                                     <action selector="mapButtonAction:" destination="TgQ-F5-eCc" eventType="touchUpInside" id="JTe-1I-L1c"/>
                                 </connections>
@@ -220,14 +224,14 @@
                                     <constraint firstAttribute="width" constant="45" id="icY-6o-anm"/>
                                 </constraints>
                             </activityIndicatorView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fGp-fC-5Tw">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fGp-fC-5Tw">
                                 <rect key="frame" x="35" y="55" width="36" height="36"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="36" id="VyF-2l-7XK"/>
                                     <constraint firstAttribute="width" constant="36" id="vHH-Qk-fZn"/>
                                 </constraints>
-                                <state key="normal" title="Back"/>
+                                <state key="normal" image="nav_icon_left"/>
                                 <connections>
                                     <action selector="backButtonAction:" destination="UHR-mq-JQd" eventType="touchUpInside" id="f1j-M1-ttd"/>
                                 </connections>
@@ -510,5 +514,10 @@
     </scenes>
     <resources>
         <image name="List_bg.png" width="750" height="1334"/>
+        <image name="Nav_location_icon" width="17" height="21"/>
+        <image name="list_top_cycling" width="38" height="38"/>
+        <image name="list_top_vehicle" width="38" height="38"/>
+        <image name="list_top_walking" width="38" height="38"/>
+        <image name="nav_icon_left" width="39" height="39"/>
     </resources>
 </document>

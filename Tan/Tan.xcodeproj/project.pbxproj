@@ -68,6 +68,7 @@
 		BF3BAF981BDBCA13009F33D3 /* List_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = BF3BAF971BDBCA13009F33D3 /* List_bg.png */; };
 		BF3BAF9B1BDBD994009F33D3 /* TANLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = BF3BAF9A1BDBD994009F33D3 /* TANLocation.m */; };
 		BF3BAF9E1BDBDA07009F33D3 /* TanClueVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BF3BAF9D1BDBDA07009F33D3 /* TanClueVC.m */; };
+		BF3BAFA01BDBDC1D009F33D3 /* Tan.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF3BAF9F1BDBDC1D009F33D3 /* Tan.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -202,6 +203,7 @@
 		BF3BAF9A1BDBD994009F33D3 /* TANLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TANLocation.m; sourceTree = "<group>"; };
 		BF3BAF9C1BDBDA07009F33D3 /* TanClueVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TanClueVC.h; sourceTree = "<group>"; };
 		BF3BAF9D1BDBDA07009F33D3 /* TanClueVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TanClueVC.m; sourceTree = "<group>"; };
+		BF3BAF9F1BDBDC1D009F33D3 /* Tan.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Tan.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -468,6 +470,7 @@
 			isa = PBXGroup;
 			children = (
 				BF3BAF971BDBCA13009F33D3 /* List_bg.png */,
+				BF3BAF9F1BDBDC1D009F33D3 /* Tan.xcassets */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -553,6 +556,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF3BAECA1BDB5362009F33D3 /* LaunchScreen.storyboard in Resources */,
+				BF3BAFA01BDBDC1D009F33D3 /* Tan.xcassets in Resources */,
 				BF3BAEC71BDB5362009F33D3 /* Assets.xcassets in Resources */,
 				BF3BAF981BDBCA13009F33D3 /* List_bg.png in Resources */,
 				BF3BAF7A1BDB8947009F33D3 /* TanProjectCardView.xib in Resources */,
