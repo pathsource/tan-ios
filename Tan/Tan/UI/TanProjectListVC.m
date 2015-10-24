@@ -9,6 +9,7 @@
 #import "TanProjectListVC.h"
 #import "ZLSwipeableView.h"
 #import "TanProjectCardView.h"
+#import "TanDefinition.h"
 
 @interface TanProjectListVC ()<ZLSwipeableViewDataSource,
 ZLSwipeableViewDelegate>
@@ -26,10 +27,13 @@ ZLSwipeableViewDelegate>
 }
 @property (weak, nonatomic) IBOutlet UIImageView *backgroundImageView;
 @property (weak, nonatomic) IBOutlet ZLSwipeableView *swipeCardsView;
-
+@property (readonly,nonatomic) NSArray *projects;
 @end
 
 @implementation TanProjectListVC
+{
+    NSUInteger currentIndex;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -39,6 +43,8 @@ ZLSwipeableViewDelegate>
     self.swipeCardsView.dataSource = self;
     
     self.navigationController.navigationBarHidden = YES;
+    
+    currentIndex = self.projects.count - 1;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -56,12 +62,19 @@ ZLSwipeableViewDelegate>
 }
 */
 
+#pragma mark ====== Getter ======
+- (NSArray *)projects
+{
+    return [TANDataCenter dataCenter].projects;
+}
+
 #pragma mark - ZLSwipeableViewDelegate
 
 - (void)swipeableView:(ZLSwipeableView *)swipeableView
          didSwipeView:(UIView *)view
           inDirection:(ZLSwipeableViewDirection)direction {
     NSLog(@"did swipe in direction: %zd", direction);
+    
 }
 
 - (void)swipeableView:(ZLSwipeableView *)swipeableView
@@ -92,11 +105,19 @@ ZLSwipeableViewDelegate>
 #pragma mark - ZLSwipeableViewDataSource
 
 - (UIView *)nextViewForSwipeableView:(ZLSwipeableView *)swipeableView {
+    
+    currentIndex ++;
+    if (currentIndex == self.projects.count) {
+        currentIndex = 0;
+    }
+    
     TanProjectCardView *cardView =
     [[[NSBundle mainBundle] loadNibNamed:@"TanProjectCardView"
                                    owner:self
                                  options:nil] objectAtIndex:0];
     cardView.frame = self.swipeCardsView.bounds;
+    cardView.project = self.projects[currentIndex];
+
     [cardView selectedCardHandler:^(id sender) {
         
     }];

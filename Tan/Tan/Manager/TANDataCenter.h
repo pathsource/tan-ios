@@ -8,7 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
+extern NSString * const TANDidGetProjectNotification;
+
 @interface TANDataCenter : NSObject
+
+@property (strong,nonatomic) NSArray * projects;
 + (TANDataCenter *)dataCenter;
-+ (void)fetchDataWithType:(NSString *)type URL:(NSString *)URL parameters:(NSDictionary *)parameters;
+- (void)fetchProjects;
 @end

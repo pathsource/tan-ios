@@ -13,7 +13,16 @@
 {
     if (self = [super init]) {
         [data enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
-            [self setValue:obj forKey:key];
+            if ([key isEqualToString:@"id"]) {
+                [self setValue:obj forKey:@"ID"];
+            }else
+            if ([key isEqualToString:@"description"]) {
+                [self setValue:obj forKey:@"des"];
+            }
+            else{
+                [self setValue:obj forKey:key];
+            }
+            
         }];
     }
     return self;

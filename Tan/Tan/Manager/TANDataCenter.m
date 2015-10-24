@@ -8,10 +8,17 @@
 
 #import "TANDataCenter.h"
 #import "AFNetworking.h"
+#import "TanProject.h"
 
-static NSString * const serverStr = @"http://tan.maimoe.com/projects.json";
+static NSString * const serverStr = @"http://tan.maimoe.com";
+static NSString * const projectsStr = @"/projects.json";
+
+NSString * const TANDidGetProjectNotification = @"TANDidGetProjectNotification";
 
 static TANDataCenter * dataCenter = nil;
+
+@interface TANDataCenter ()
+@end
 
 @implementation TANDataCenter
 
@@ -25,13 +32,44 @@ static TANDataCenter * dataCenter = nil;
     return dataCenter;
 }
 
-+ (void)fetchDataWithType:(NSString *)type URL:(NSString *)URL parameters:(NSDictionary *)parameters
++ (NSString *)projectApi
+{
+    return [serverStr stringByAppendingString:projectsStr];
+}
+
+- (void)fetchProjects
+{
+    [[TANDataCenter dataCenter] fetchDataWithType:@"GET" URL:[TANDataCenter projectApi] parameters:nil completion:^(id responseObject) {
+        NSArray * jsons = responseObject[@"projects"];
+        __block NSMutableArray * arr = [@[] mutableCopy];
+        [jsons enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+
+            TanProject * project = [[TanProject alloc] initWithJosnData:obj];
+            [arr addObject:project];
+            
+            if (idx == jsons.count - 1) {
+                self.projects = arr;
+                
+                NSLog(@"Did get projects!");
+                
+                [[NSNotificationCenter defaultCenter] postNotificationName:TANDidGetProjectNotification object:nil];
+            }
+        }];
+    }];
+}
+
+- (void)fetchDataWithType:(NSString *)type URL:(NSString *)URL parameters:(NSDictionary *)parameters completion:(void (^)(id responseObject))success
 {
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     
     if ([type isEqualToString:@"POST"]) {
         [manager POST:URL parameters:parameters success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
             NSLog(@"JSON: %@", responseObject);
+            
+            if (success) {
+                success(responseObject);
+            }
+            
         } failure:^(AFHTTPRequestOperation * _Nullable operation, NSError * _Nonnull error) {
             NSLog(@"Error: %@", error);
         }];
@@ -39,6 +77,11 @@ static TANDataCenter * dataCenter = nil;
         AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
         [manager GET:URL parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
             NSLog(@"JSON: %@", responseObject);
+            
+            if (success) {
+                success(responseObject);
+            }
+            
         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
             NSLog(@"Error: %@", error);
         }];

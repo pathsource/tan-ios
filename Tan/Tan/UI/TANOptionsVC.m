@@ -7,8 +7,10 @@
 //
 
 #import "TANOptionsVC.h"
+#import "TANDataCenter.h"
 
 @interface TANOptionsVC ()
+@property (weak, nonatomic) IBOutlet UIButton *button;
 
 @end
 
@@ -17,6 +19,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+    [[TANDataCenter dataCenter] fetchProjects];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didGetProject:) name:TANDidGetProjectNotification object:nil];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -24,4 +30,12 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)didGetProject:(NSNotification *)not
+{
+    if (not != nil) {
+        self.button.backgroundColor = [UIColor greenColor];
+        
+        [[NSNotificationCenter defaultCenter] removeObserver:self];
+    }
+}
 @end

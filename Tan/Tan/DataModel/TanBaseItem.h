@@ -9,5 +9,5 @@
 #import <Foundation/Foundation.h>
 
 @interface TanBaseItem : NSObject
-
+- (instancetype)initWithJosnData:(NSDictionary *)data;
 @end

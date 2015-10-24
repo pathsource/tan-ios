@@ -7,6 +7,7 @@
 //
 
 #import "TanProjectCardView.h"
+#import "TanDefinition.h"
 
 @interface TanProjectCardView()
 {
@@ -38,6 +39,15 @@
     [self setup];
     
     desLabel.font = [UIFont systemFontOfSize:13];
+}
+
+- (void)setProject:(TanProject *)project
+{
+    _project = project;
+    
+    desLabel.text = project.name;
+    
+    [projectImageView sd_setImageWithURL:[NSURL URLWithString:project.image] placeholderImage:nil];
 }
 
 - (void)setup {

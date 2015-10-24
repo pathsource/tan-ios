@@ -10,6 +10,8 @@
 
 typedef void(^ButtonHandler)(id sender);
 
+@class TanProject;
 @interface TanProjectCardView : UIView
+@property (nonatomic,strong) TanProject *project;
 - (void)selectedCardHandler:(ButtonHandler)handler;
 @end
