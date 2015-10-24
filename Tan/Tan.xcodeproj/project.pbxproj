@@ -59,12 +59,13 @@
 		BF3BAF751BDB8558009F33D3 /* QRView.m in Sources */ = {isa = PBXBuildFile; fileRef = BF3BAF711BDB8558009F33D3 /* QRView.m */; };
 		BF3BAF791BDB8947009F33D3 /* TanProjectCardView.m in Sources */ = {isa = PBXBuildFile; fileRef = BF3BAF771BDB8947009F33D3 /* TanProjectCardView.m */; };
 		BF3BAF7A1BDB8947009F33D3 /* TanProjectCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF3BAF781BDB8947009F33D3 /* TanProjectCardView.xib */; };
-		BF3BAF7D1BDB89F6009F33D3 /* psr_bg_project.png in Resources */ = {isa = PBXBuildFile; fileRef = BF3BAF7C1BDB89F6009F33D3 /* psr_bg_project.png */; };
 		BF3BAF831BDB9821009F33D3 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF3BAF821BDB9821009F33D3 /* HealthKit.framework */; };
 		BF3BAF851BDB9828009F33D3 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF3BAF841BDB9828009F33D3 /* MapKit.framework */; };
 		BF3BAF881BDBA7B5009F33D3 /* TanProjectDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BF3BAF871BDBA7B5009F33D3 /* TanProjectDetailVC.m */; };
 		BF3BAF8C1BDBB3A3009F33D3 /* UIColor+Tan.m in Sources */ = {isa = PBXBuildFile; fileRef = BF3BAF8B1BDBB3A3009F33D3 /* UIColor+Tan.m */; };
 		BF3BAF8E1BDBB5C4009F33D3 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF3BAF8D1BDBB5C4009F33D3 /* CoreLocation.framework */; };
+		BF3BAF901BDBB6E2009F33D3 /* psr_bg_project.png in Resources */ = {isa = PBXBuildFile; fileRef = BF3BAF8F1BDBB6E2009F33D3 /* psr_bg_project.png */; };
+		BF3BAF931BDBB869009F33D3 /* TanArrivalVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BF3BAF921BDBB869009F33D3 /* TanArrivalVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -184,7 +185,6 @@
 		BF3BAF761BDB8947009F33D3 /* TanProjectCardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TanProjectCardView.h; sourceTree = "<group>"; };
 		BF3BAF771BDB8947009F33D3 /* TanProjectCardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TanProjectCardView.m; sourceTree = "<group>"; };
 		BF3BAF781BDB8947009F33D3 /* TanProjectCardView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TanProjectCardView.xib; sourceTree = "<group>"; };
-		BF3BAF7C1BDB89F6009F33D3 /* psr_bg_project.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = psr_bg_project.png; sourceTree = "<group>"; };
 		BF3BAF811BDB952A009F33D3 /* TanDefinition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TanDefinition.h; sourceTree = "<group>"; };
 		BF3BAF821BDB9821009F33D3 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		BF3BAF841BDB9828009F33D3 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -193,6 +193,9 @@
 		BF3BAF8A1BDBB3A3009F33D3 /* UIColor+Tan.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Tan.h"; sourceTree = "<group>"; };
 		BF3BAF8B1BDBB3A3009F33D3 /* UIColor+Tan.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Tan.m"; sourceTree = "<group>"; };
 		BF3BAF8D1BDBB5C4009F33D3 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		BF3BAF8F1BDBB6E2009F33D3 /* psr_bg_project.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = psr_bg_project.png; path = ../../../../../../Downloads/psr_bg_project.png; sourceTree = "<group>"; };
+		BF3BAF911BDBB869009F33D3 /* TanArrivalVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TanArrivalVC.h; sourceTree = "<group>"; };
+		BF3BAF921BDBB869009F33D3 /* TanArrivalVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TanArrivalVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -374,6 +377,8 @@
 				BF3BAF541BDB75DD009F33D3 /* TanProjectListVC.m */,
 				BF3BAF861BDBA7B5009F33D3 /* TanProjectDetailVC.h */,
 				BF3BAF871BDBA7B5009F33D3 /* TanProjectDetailVC.m */,
+				BF3BAF911BDBB869009F33D3 /* TanArrivalVC.h */,
+				BF3BAF921BDBB869009F33D3 /* TanArrivalVC.m */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -443,7 +448,7 @@
 		BF3BAF7B1BDB89F6009F33D3 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
-				BF3BAF7C1BDB89F6009F33D3 /* psr_bg_project.png */,
+				BF3BAF8F1BDBB6E2009F33D3 /* psr_bg_project.png */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -540,7 +545,7 @@
 				BF3BAECA1BDB5362009F33D3 /* LaunchScreen.storyboard in Resources */,
 				BF3BAEC71BDB5362009F33D3 /* Assets.xcassets in Resources */,
 				BF3BAF7A1BDB8947009F33D3 /* TanProjectCardView.xib in Resources */,
-				BF3BAF7D1BDB89F6009F33D3 /* psr_bg_project.png in Resources */,
+				BF3BAF901BDBB6E2009F33D3 /* psr_bg_project.png in Resources */,
 				BF3BAEC51BDB5362009F33D3 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -593,6 +598,7 @@
 				BF3BAF0D1BDB5EBB009F33D3 /* AFURLRequestSerialization.m in Sources */,
 				BF3BAF551BDB75DD009F33D3 /* TanProjectListVC.m in Sources */,
 				BF3BAF231BDB64DF009F33D3 /* TanBaseItem.m in Sources */,
+				BF3BAF931BDBB869009F33D3 /* TanArrivalVC.m in Sources */,
 				BF3BAF731BDB8558009F33D3 /* QRMenu.m in Sources */,
 				BF3BAF101BDB5EBB009F33D3 /* AFNetworkActivityIndicatorManager.m in Sources */,
 				BF3BAF4C1BDB6BC2009F33D3 /* SDWebImagePrefetcher.m in Sources */,

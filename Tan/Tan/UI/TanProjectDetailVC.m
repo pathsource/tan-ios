@@ -23,6 +23,7 @@
     [super viewDidLoad];
 
     startButton.backgroundColor = [UIColor colorFromRGB:0x3dafd8];
+    [startButton setTitle:@"开始" forState:UIControlStateNormal];
 }
 
 - (void)loadDetailWithID:(NSNumber *)ID

@@ -75,6 +75,7 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="psr_bg_project.png" translatesAutoresizingMaskIntoConstraints="NO" id="hXV-im-qsR">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <animations/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gmj-48-LHV">
                                 <rect key="frame" x="55" y="55" width="46" height="30"/>
@@ -201,10 +202,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mWz-KA-Gbt">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="550"/>
+                            <webView contentMode="scaleToFill" scalesPageToFit="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mWz-KA-Gbt">
+                                <rect key="frame" x="0.0" y="-20" width="600" height="570"/>
                                 <animations/>
-                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <dataDetectorType key="dataDetectorTypes"/>
                             </webView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fGp-fC-5Tw">
                                 <rect key="frame" x="35" y="55" width="36" height="36"/>
@@ -227,6 +229,7 @@
                                 <state key="normal" title="Button"/>
                                 <connections>
                                     <action selector="startButtonAction:" destination="UHR-mq-JQd" eventType="touchUpInside" id="mRK-aK-bQR"/>
+                                    <segue destination="aKt-X9-Kpj" kind="show" id="qCL-6U-kaU"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -236,7 +239,7 @@
                             <constraint firstItem="fH5-EI-gu7" firstAttribute="top" secondItem="4IG-66-PA4" secondAttribute="bottom" id="6yC-pj-86T"/>
                             <constraint firstItem="fGp-fC-5Tw" firstAttribute="leading" secondItem="SiR-wT-xcr" secondAttribute="leading" constant="35" id="8a9-pp-RZh"/>
                             <constraint firstItem="4IG-66-PA4" firstAttribute="top" secondItem="mWz-KA-Gbt" secondAttribute="bottom" id="CaI-VJ-KJ8"/>
-                            <constraint firstItem="mWz-KA-Gbt" firstAttribute="top" secondItem="vf8-5z-paP" secondAttribute="bottom" constant="-20" id="Dkt-9J-6RP"/>
+                            <constraint firstItem="mWz-KA-Gbt" firstAttribute="top" secondItem="vf8-5z-paP" secondAttribute="bottom" constant="-40" id="Dkt-9J-6RP"/>
                             <constraint firstAttribute="trailing" secondItem="4IG-66-PA4" secondAttribute="trailing" id="JMX-Ch-J4v"/>
                             <constraint firstItem="mWz-KA-Gbt" firstAttribute="leading" secondItem="SiR-wT-xcr" secondAttribute="leading" id="Jgx-0f-PME"/>
                             <constraint firstItem="4IG-66-PA4" firstAttribute="leading" secondItem="SiR-wT-xcr" secondAttribute="leading" id="Led-2D-y2C"/>
@@ -252,6 +255,7 @@
                             </mask>
                         </variation>
                     </view>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
                         <outlet property="detailWebView" destination="mWz-KA-Gbt" id="ZgV-Qh-NcD"/>
                         <outlet property="startButton" destination="4IG-66-PA4" id="MyP-nc-y6N"/>
@@ -260,6 +264,77 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ilm-Vl-Q1G" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="939" y="756"/>
+        </scene>
+        <!--Tan ArrivalVC-->
+        <scene sceneID="LVJ-yn-0mr">
+            <objects>
+                <viewController id="aKt-X9-Kpj" customClass="TanArrivalVC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="06o-pI-KTZ"/>
+                        <viewControllerLayoutGuide type="bottom" id="I65-97-2gv"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ggF-Lp-tvi">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KlF-3D-NcG">
+                                <rect key="frame" x="30" y="80" width="540" height="440"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="HIs-9h-vel">
+                                <rect key="frame" x="270" y="45" width="60" height="60"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="3Ld-tX-8Ha"/>
+                                    <constraint firstAttribute="height" constant="60" id="xO7-eC-Kbd"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cjN-Fh-rf4">
+                                <rect key="frame" x="30" y="520" width="270" height="50"/>
+                                <animations/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="arrivalButtonAction:" destination="aKt-X9-Kpj" eventType="touchUpInside" id="MZH-g7-Opd"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uIm-Sa-Fgn">
+                                <rect key="frame" x="300" y="520" width="270" height="50"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="pDw-I1-c2U"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="giveUpButtonAction:" destination="aKt-X9-Kpj" eventType="touchUpInside" id="yP8-es-bOf"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="cjN-Fh-rf4" firstAttribute="top" secondItem="KlF-3D-NcG" secondAttribute="bottom" id="71g-Me-XFy"/>
+                            <constraint firstAttribute="trailing" secondItem="uIm-Sa-Fgn" secondAttribute="trailing" constant="30" id="7Tu-Ok-sAd"/>
+                            <constraint firstItem="uIm-Sa-Fgn" firstAttribute="leading" secondItem="cjN-Fh-rf4" secondAttribute="trailing" id="Atf-Ge-6HL"/>
+                            <constraint firstItem="uIm-Sa-Fgn" firstAttribute="width" secondItem="cjN-Fh-rf4" secondAttribute="width" id="BS1-av-qyN"/>
+                            <constraint firstItem="KlF-3D-NcG" firstAttribute="leading" secondItem="ggF-Lp-tvi" secondAttribute="leading" constant="30" id="Cmt-b3-eXI"/>
+                            <constraint firstItem="KlF-3D-NcG" firstAttribute="top" secondItem="06o-pI-KTZ" secondAttribute="bottom" constant="60" id="FLt-Va-RU6"/>
+                            <constraint firstItem="I65-97-2gv" firstAttribute="top" secondItem="uIm-Sa-Fgn" secondAttribute="bottom" constant="30" id="NYg-xT-f8a"/>
+                            <constraint firstItem="cjN-Fh-rf4" firstAttribute="leading" secondItem="ggF-Lp-tvi" secondAttribute="leading" constant="30" id="TX4-oS-KSe"/>
+                            <constraint firstItem="uIm-Sa-Fgn" firstAttribute="top" secondItem="cjN-Fh-rf4" secondAttribute="top" id="cWv-JJ-ofX"/>
+                            <constraint firstItem="cjN-Fh-rf4" firstAttribute="height" secondItem="uIm-Sa-Fgn" secondAttribute="height" id="fN4-7V-gAh"/>
+                            <constraint firstItem="HIs-9h-vel" firstAttribute="top" secondItem="06o-pI-KTZ" secondAttribute="bottom" constant="25" id="iCs-SW-jo0"/>
+                            <constraint firstItem="HIs-9h-vel" firstAttribute="centerX" secondItem="ggF-Lp-tvi" secondAttribute="centerX" id="lMA-rj-6hK"/>
+                            <constraint firstAttribute="trailing" secondItem="KlF-3D-NcG" secondAttribute="trailing" constant="30" id="sb0-oz-Bwu"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="arrivalButton" destination="cjN-Fh-rf4" id="c38-Gx-qfc"/>
+                        <outlet property="giveupButton" destination="uIm-Sa-Fgn" id="ulR-9a-6de"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="S8m-Ca-DJD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
         </scene>
     </scenes>
     <resources>
