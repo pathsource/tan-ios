@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BF3467FB1BDC15EA00D3C451 /* frontpage_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = BF3467FA1BDC15EA00D3C451 /* frontpage_bg.png */; };
+		BF3467FD1BDC162400D3C451 /* frontpage_halfcircle.png in Resources */ = {isa = PBXBuildFile; fileRef = BF3467FC1BDC162400D3C451 /* frontpage_halfcircle.png */; };
 		BF3BAEBC1BDB5362009F33D3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BF3BAEBB1BDB5362009F33D3 /* main.m */; };
 		BF3BAEBF1BDB5362009F33D3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BF3BAEBE1BDB5362009F33D3 /* AppDelegate.m */; };
 		BF3BAEC51BDB5362009F33D3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF3BAEC31BDB5362009F33D3 /* Main.storyboard */; };
@@ -82,6 +84,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BF3467FA1BDC15EA00D3C451 /* frontpage_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = frontpage_bg.png; sourceTree = "<group>"; };
+		BF3467FC1BDC162400D3C451 /* frontpage_halfcircle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = frontpage_halfcircle.png; sourceTree = "<group>"; };
 		BF3BAEB71BDB5362009F33D3 /* Tan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF3BAEBB1BDB5362009F33D3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		BF3BAEBD1BDB5362009F33D3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -471,7 +475,9 @@
 		BF3BAF941BDBC75F009F33D3 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				BF3467FA1BDC15EA00D3C451 /* frontpage_bg.png */,
 				BF3BAF971BDBCA13009F33D3 /* List_bg.png */,
+				BF3467FC1BDC162400D3C451 /* frontpage_halfcircle.png */,
 				BF3BAF9F1BDBDC1D009F33D3 /* Tan.xcassets */,
 			);
 			path = Resource;
@@ -568,6 +574,8 @@
 				BF3BAEC71BDB5362009F33D3 /* Assets.xcassets in Resources */,
 				BF3BAF981BDBCA13009F33D3 /* List_bg.png in Resources */,
 				BF3BAF7A1BDB8947009F33D3 /* TanProjectCardView.xib in Resources */,
+				BF3467FD1BDC162400D3C451 /* frontpage_halfcircle.png in Resources */,
+				BF3467FB1BDC15EA00D3C451 /* frontpage_bg.png in Resources */,
 				BF3BAEC51BDB5362009F33D3 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

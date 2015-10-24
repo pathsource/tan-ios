@@ -8,6 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
+typedef NS_ENUM(NSUInteger,TANType) {
+    TANTypeWalk = 0,
+    TANTypeCycling,
+    TANTypeVehicle
+};
+
 @protocol TANDataCenterDelegate <NSObject>
 @optional
 - (void)startResult:(BOOL)success;
@@ -23,6 +29,7 @@ extern NSString * const TANDidGetProjectNotification;
 @property (nonatomic, weak) id<TANDataCenterDelegate> delegate;
 @property (strong,nonatomic) NSArray * projects;
 @property (strong,nonatomic) TanProject *tanProject;
+@property (assign,nonatomic) TANType type;
 
 + (TANDataCenter *)dataCenter;
 - (void)startFetchProjects:(NSArray*)coordinates;

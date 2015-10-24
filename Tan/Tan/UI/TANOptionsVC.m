@@ -11,7 +11,9 @@
 #import "TANLocation.h"
 
 @interface TANOptionsVC () <TANLocationDelegate>
-@property (weak, nonatomic) IBOutlet UIButton *button;
+@property (weak, nonatomic) IBOutlet UIButton *walkingButton;
+@property (weak, nonatomic) IBOutlet UIButton *vehicleButton;
+@property (weak, nonatomic) IBOutlet UIButton *cyclingButton;
 
 @end
 
@@ -35,7 +37,7 @@
 - (void)didGetProject:(NSNotification *)not
 {
     if (not != nil) {
-        self.button.backgroundColor = [UIColor greenColor];
+        
         
         [[NSNotificationCenter defaultCenter] removeObserver:self];
     }
@@ -46,5 +48,21 @@
 {
     [[TANDataCenter dataCenter] startFetchProjects:coordinates];
 }
+
+#pragma mark ====== button actions ======
+- (IBAction)walkingButtonAction:(id)sender {
+    [TANDataCenter dataCenter].type = TANTypeWalk;
+}
+
+- (IBAction)cyclingButtonAction:(id)sender {
+    [TANDataCenter dataCenter].type = TANTypeCycling;
+}
+
+- (IBAction)vehicleButtonAction:(id)sender {
+    [TANDataCenter dataCenter].type = TANTypeVehicle;
+}
+
+#pragma mark === UIViewControllerTransitioningDelegate
+
 
 @end

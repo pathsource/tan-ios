@@ -61,7 +61,7 @@
     contentView.layer.cornerRadius = 5.f;
     
     bgImageView.maskView = [[UIView alloc] initWithFrame:bgImageView.bounds];
-    bgImageView.maskView.backgroundColor = [[UIColor colorFromRGB:0x3e3e3e] colorWithAlphaComponent:0.6];
+    bgImageView.maskView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.6];
     
     [bgImageView sd_setImageWithURL:[NSURL URLWithString:[TANDataCenter dataCenter].tanProject.image]];
     

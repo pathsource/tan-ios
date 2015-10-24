@@ -47,6 +47,21 @@ ZLSwipeableViewDelegate>
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    switch ([TANDataCenter dataCenter].type) {
+        case TANTypeWalk:
+            [self walkingButtonAction:walkingButton];
+            break;
+        case TANTypeCycling:
+            [self cyclingButtonAction:cyclingButton];
+            break;
+        case TANTypeVehicle:
+            [self drivingButtonAction:drivingButton];
+            break;
+            
+        default:
+            break;
+    }
+    
     self.swipeCardsView.delegate= self;
     self.swipeCardsView.dataSource = self;
     
