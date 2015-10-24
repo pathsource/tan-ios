@@ -93,4 +93,60 @@
     }
 }
 
+#pragma mark Health
+- (void)requestSteps {
+    if (NSClassFromString(@"HKHealthStore") && [HKHealthStore isHealthDataAvailable])
+    {
+        // Add your HealthKit code here
+        HKHealthStore *healthStore = [[HKHealthStore alloc] init];
+        
+        // Read date of birth, biological sex and step count etc
+        NSSet *readObjectTypes  = [NSSet setWithObjects:
+                                   [HKSampleType quantityTypeForIdentifier:HKQuantityTypeIdentifierStepCount],
+                                   nil];
+        
+        // Request access
+        [healthStore requestAuthorizationToShareTypes:nil
+                                            readTypes:readObjectTypes
+                                           completion:^(BOOL success, NSError *error) {
+                                               
+                                               if(success == YES)
+                                               {
+                                                   [self getLastStep:healthStore];
+                                               }
+                                               else
+                                               {
+                                                   // Determine if it was an error or if the
+                                                   // user just canceld the authorization request
+                                                   //Fit_AAPLprofileviewcontroller_m.html
+                                               }
+                                               
+                                           }];
+    }
+}
+
+- (void)getLastStep: (HKHealthStore*)healthStore {
+    HKQuantityType *type = [HKObjectType quantityTypeForIdentifier:HKQuantityTypeIdentifierStepCount];
+    NSDate *today = [NSDate date];
+    NSPredicate *predicate = [HKQuery predicateForSamplesWithStartDate:[today dateByAddingTimeInterval: -86400.0] endDate:today options:HKQueryOptionNone];
+    HKSampleQuery    *query = [[HKSampleQuery alloc] initWithSampleType:type
+                                                              predicate:predicate
+                                                                  limit:HKObjectQueryNoLimit
+                                                        sortDescriptors:nil
+                                                         resultsHandler:^(HKSampleQuery *query, NSArray *result, NSError *error){
+                                                             
+                                                             if(!error && result)
+                                                             {
+                                                                 double totalSteps = 0;
+                                                                 
+                                                                 for(HKQuantitySample *quantitySample in result)
+                                                                 {
+                                                                     double step = [quantitySample.quantity doubleValueForUnit:([HKUnit countUnit])];
+                                                                     totalSteps = totalSteps + step;
+                                                                 }
+                                                             }
+                                                         }];
+    [healthStore executeQuery:query];
+}
+
 @end
