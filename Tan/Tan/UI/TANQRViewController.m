@@ -157,10 +157,8 @@
     }
     
     NSLog(@" %@",stringValue);
-    
-    if (self.qrUrlBlock) {
-        self.qrUrlBlock(stringValue);
-    }
+    [self.delegate qrResult:stringValue];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 

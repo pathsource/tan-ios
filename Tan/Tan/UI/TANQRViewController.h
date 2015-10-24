@@ -8,10 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-typedef void(^QRUrlBlock)(NSString *url);
+@protocol TANQRViewControllerDelegate <NSObject>
+- (void)qrResult:(NSString*)result;
+@end
+
 @interface TANQRViewController : UIViewController
-
-
-@property (nonatomic, copy) QRUrlBlock qrUrlBlock;
+@property (nonatomic, weak) id<TANQRViewControllerDelegate> delegate;
 
 @end

@@ -9,7 +9,9 @@
 #import <Foundation/Foundation.h>
 
 @protocol TANDataCenterDelegate <NSObject>
+@optional
 - (void)checkinResult:(BOOL)success withContent:(NSString*)content andHint:(NSString*)hint;
+- (void)validateResult:(BOOL)success;
 @end
 
 extern NSString * const TANDidGetProjectNotification;
@@ -21,7 +23,7 @@ extern NSString * const TANDidGetProjectNotification;
 + (TANDataCenter *)dataCenter;
 - (void)startFetchProjects:(NSArray*)coordinates;
 - (void)startCheckin:(NSNumber *)projectID withCoordinates:(NSArray*)coordinates;
-- (void)startValidateAnswer;
+- (void)startValidateAnswer:(NSNumber *)projectID withAnswer:(NSString*)answer;
 
 + (NSString *)projectDetailApi:(NSNumber *)projectID;
 @end

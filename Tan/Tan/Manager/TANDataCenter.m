@@ -48,9 +48,9 @@ static TANDataCenter * dataCenter = nil;
     return [serverStr stringByAppendingFormat:@"%@%@/checkin",detailStr,projectID];
 }
 
-+ (NSString *)projectValidateApi:(NSNumber *)projectID withAnswer:(NSString*)answer
++ (NSString *)projectValidateApi:(NSNumber *)projectID
 {
-    return [serverStr stringByAppendingFormat:@"%@/%@validate?answer=%@", detailStr, projectID, answer];
+    return [serverStr stringByAppendingFormat:@"%@%@/validate", detailStr, projectID];
 }
 
 - (void)startCheckin:(NSNumber *)projectID withCoordinates:(NSArray*)coordinates
@@ -69,9 +69,13 @@ static TANDataCenter * dataCenter = nil;
 
 - (void)startValidateAnswer:(NSNumber *)projectID withAnswer:(NSString*)answer
 {
-    [[TANDataCenter dataCenter] fetchDataWithType:@"POST" URL:[TANDataCenter projectValidateApi:projectID withAnswer:answer] parameters:nil completion:^(id responseObject) {
-        NSArray * jsons = responseObject[@"success"];
-        
+    NSDictionary *parameters = @{};
+    if (nil != answer) {
+        parameters = @{@"answer": answer};
+    }
+    [[TANDataCenter dataCenter] fetchDataWithType:@"POST" URL:[TANDataCenter projectValidateApi:projectID] parameters:parameters completion:^(id responseObject) {
+        BOOL success = responseObject[@"success"];
+        [self.delegate validateResult:success];
     }];
 }
 

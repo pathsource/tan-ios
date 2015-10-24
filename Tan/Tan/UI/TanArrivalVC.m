@@ -9,6 +9,7 @@
 #import "TanArrivalVC.h"
 #import "TanDefinition.h"
 #import "TanProjectListVC.h"
+#import "TanClueVC.h"
 #import "TANLocation.h"
 
 @interface TanArrivalVC() <TANLocationDelegate, TANDataCenterDelegate>
@@ -85,7 +86,9 @@
 #pragma mark TANDataCenterDelegate
 - (void)checkinResult:(BOOL)success withContent:(NSString*)content andHint:(NSString*)hint
 {
-    
+    if (success) {
+        [self performSegueWithIdentifier:@"goClue" sender:self];
+    }
 }
 
 @end
