@@ -7,7 +7,6 @@
 //
 
 #import "TanProjectCardView.h"
-#import "PSFormatter.h"
 
 @interface TanProjectCardView()
 {
@@ -38,7 +37,7 @@
     
     [self setup];
     
-    desLabel.font = [PSFormatter fontMedium];
+    desLabel.font = [UIFont systemFontOfSize:13];
 }
 
 - (void)setup {

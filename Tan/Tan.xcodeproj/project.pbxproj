@@ -60,7 +60,6 @@
 		BF3BAF791BDB8947009F33D3 /* TanProjectCardView.m in Sources */ = {isa = PBXBuildFile; fileRef = BF3BAF771BDB8947009F33D3 /* TanProjectCardView.m */; };
 		BF3BAF7A1BDB8947009F33D3 /* TanProjectCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF3BAF781BDB8947009F33D3 /* TanProjectCardView.xib */; };
 		BF3BAF7D1BDB89F6009F33D3 /* psr_bg_project.png in Resources */ = {isa = PBXBuildFile; fileRef = BF3BAF7C1BDB89F6009F33D3 /* psr_bg_project.png */; };
-		BF3BAF801BDB94C1009F33D3 /* PSFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = BF3BAF7F1BDB94C1009F33D3 /* PSFormatter.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -181,8 +180,6 @@
 		BF3BAF771BDB8947009F33D3 /* TanProjectCardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TanProjectCardView.m; sourceTree = "<group>"; };
 		BF3BAF781BDB8947009F33D3 /* TanProjectCardView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TanProjectCardView.xib; sourceTree = "<group>"; };
 		BF3BAF7C1BDB89F6009F33D3 /* psr_bg_project.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = psr_bg_project.png; sourceTree = "<group>"; };
-		BF3BAF7E1BDB94C1009F33D3 /* PSFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSFormatter.h; sourceTree = "<group>"; };
-		BF3BAF7F1BDB94C1009F33D3 /* PSFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSFormatter.m; sourceTree = "<group>"; };
 		BF3BAF811BDB952A009F33D3 /* TanDefinition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TanDefinition.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -262,8 +259,6 @@
 		BF3BAEDF1BDB5EBB009F33D3 /* ThirdPatrty */ = {
 			isa = PBXGroup;
 			children = (
-				BF3BAF7E1BDB94C1009F33D3 /* PSFormatter.h */,
-				BF3BAF7F1BDB94C1009F33D3 /* PSFormatter.m */,
 				BF3BAF691BDB8544009F33D3 /* QR */,
 				BF3BAF561BDB78BB009F33D3 /* ZLSwipeableView */,
 				BF3BAF271BDB6BC2009F33D3 /* SDWebImage */,
@@ -565,7 +560,6 @@
 				BF3BAF471BDB6BC2009F33D3 /* SDWebImageCompat.m in Sources */,
 				BF3BAF1D1BDB5F1C009F33D3 /* TANOptionsVC.m in Sources */,
 				BF3BAF751BDB8558009F33D3 /* QRView.m in Sources */,
-				BF3BAF801BDB94C1009F33D3 /* PSFormatter.m in Sources */,
 				BF3BAF0D1BDB5EBB009F33D3 /* AFURLRequestSerialization.m in Sources */,
 				BF3BAF551BDB75DD009F33D3 /* TanProjectListVC.m in Sources */,
 				BF3BAF231BDB64DF009F33D3 /* TanBaseItem.m in Sources */,
