@@ -21,7 +21,7 @@
 
 - (void)viewDidLoad{
     [super viewDidLoad];
-
+    
     startButton.backgroundColor = [UIColor colorFromRGB:0x3dafd8];
     [startButton setTitle:@"开始" forState:UIControlStateNormal];
 }
@@ -38,7 +38,7 @@
 
 
 - (IBAction)startButtonAction:(id)sender {
-   
+    
 }
 
 @end

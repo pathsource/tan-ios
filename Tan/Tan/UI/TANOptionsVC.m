@@ -8,8 +8,9 @@
 
 #import "TANOptionsVC.h"
 #import "TANDataCenter.h"
+#import "TANLocation.h"
 
-@interface TANOptionsVC ()
+@interface TANOptionsVC () <TANLocationDelegate>
 @property (weak, nonatomic) IBOutlet UIButton *button;
 
 @end
@@ -20,7 +21,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    [[TANDataCenter dataCenter] start];
+    [TANLocation share].delegate = self;
+    [[TANLocation share] startGetLocation];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didGetProject:) name:TANDidGetProjectNotification object:nil];
 }
@@ -38,4 +40,11 @@
         [[NSNotificationCenter defaultCenter] removeObserver:self];
     }
 }
+
+#pragma mark TANLocationDelegate
+- (void)getLocation:(NSArray*)coordinates
+{
+    [[TANDataCenter dataCenter] startFetchProjects:coordinates];
+}
+
 @end

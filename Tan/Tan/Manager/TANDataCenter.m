@@ -9,7 +9,6 @@
 #import "TANDataCenter.h"
 #import "AFNetworking.h"
 #import "TanProject.h"
-#import <CoreLocation/CoreLocation.h>
 
 static NSString * const serverStr = @"http://tan.maimoe.com";
 static NSString * const projectsStr = @"/projects.json";
@@ -19,11 +18,7 @@ NSString * const TANDidGetProjectNotification = @"TANDidGetProjectNotification";
 
 static TANDataCenter * dataCenter = nil;
 
-@interface TANDataCenter () <CLLocationManagerDelegate> {
-    CLLocationManager *locationManager;
-    NSArray *coordinates;
-}
-
+@interface TANDataCenter ()
 @end
 
 @implementation TANDataCenter
@@ -45,15 +40,40 @@ static TANDataCenter * dataCenter = nil;
 
 + (NSString *)projectDetailApi:(NSNumber *)projectID
 {
-    return [serverStr stringByAppendingFormat:@"%@%@",detailStr,projectID];
+    return [serverStr stringByAppendingFormat:@"%@/%@",detailStr,projectID];
 }
 
-- (void)start
++ (NSString *)projectCheckinApi:(NSNumber *)projectID
 {
-    [self startGetLocation];
+    return [serverStr stringByAppendingFormat:@"%@/%@/checkin",detailStr,projectID];
 }
 
-- (void)fetchProjects
++ (NSString *)projectValidateApi:(NSNumber *)projectID withAnswer:(NSString*)answer
+{
+    return [serverStr stringByAppendingFormat:@"%@/%@/validate?answer=%@", detailStr, projectID, answer];
+}
+
+- (void)startCheckin:(NSNumber *)projectID withCoordinates:(NSArray*)coordinates
+{
+    NSDictionary *parameters = @{};
+    if (nil != coordinates) {
+        parameters = @{@"coordinates": coordinates};
+    }
+    [[TANDataCenter dataCenter] fetchDataWithType:@"GET" URL:[TANDataCenter projectCheckinApi:projectID] parameters:parameters completion:^(id responseObject) {
+        NSArray * jsons = responseObject[@"success"];
+        
+    }];
+}
+
+- (void)startValidateAnswer:(NSNumber *)projectID withAnswer:(NSString*)answer
+{
+    [[TANDataCenter dataCenter] fetchDataWithType:@"GET" URL:[TANDataCenter projectValidateApi:projectID withAnswer:answer] parameters:nil completion:^(id responseObject) {
+        NSArray * jsons = responseObject[@"success"];
+        
+    }];
+}
+
+- (void)startFetchProjects:(NSArray*)coordinates
 {
     NSDictionary *parameters = @{};
     if (nil != coordinates) {
@@ -106,36 +126,6 @@ static TANDataCenter * dataCenter = nil;
             NSLog(@"Error: %@", error);
         }];
     }
-}
-
-#pragma mark ====== Location ======
-- (void)startGetLocation {
-    locationManager = [[CLLocationManager alloc] init];
-    if ([CLLocationManager locationServicesEnabled]) {
-        [self prepareLocationUpdate];
-    } else {
-        [self fetchProjects];
-    }
-}
-
-- (void)prepareLocationUpdate {
-    locationManager.delegate = self;
-    locationManager.distanceFilter = kCLDistanceFilterNone;;
-    locationManager.desiredAccuracy = kCLLocationAccuracyThreeKilometers;
-    [locationManager requestWhenInUseAuthorization];
-    [locationManager startUpdatingLocation];
-}
-
-- (void) stopLocationUpdate {
-    [locationManager stopUpdatingLocation];
-    locationManager.delegate = nil;
-}
-
-// CLLocationManagerDelegate
-- (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation {
-    coordinates = @[@(newLocation.coordinate.latitude), @(newLocation.coordinate.longitude)];
-    [self fetchProjects];
-    [self stopLocationUpdate];
 }
 
 

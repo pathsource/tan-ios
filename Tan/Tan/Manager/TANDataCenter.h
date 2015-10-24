@@ -14,8 +14,9 @@ extern NSString * const TANDidGetProjectNotification;
 
 @property (strong,nonatomic) NSArray * projects;
 + (TANDataCenter *)dataCenter;
-- (void)start;
-- (void)fetchProjects;
+- (void)startFetchProjects:(NSArray*)coordinates;
+- (void)startCheckin:(NSArray*)coordinates;
+- (void)startValidateAnswer;
 
 + (NSString *)projectDetailApi:(NSNumber *)projectID;
 @end
