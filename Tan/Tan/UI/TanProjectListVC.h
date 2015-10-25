@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+extern NSString * const cycling;
+extern NSString * const walking;
+extern NSString * const vehicle;
+
 @interface TanProjectListVC : UIViewController
 
 @end

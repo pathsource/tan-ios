@@ -98,11 +98,12 @@ static TANDataCenter * dataCenter = nil;
     }];
 }
 
-- (void)startFetchProjects:(NSArray*)coordinates
+- (void)startFetchProjects:(NSArray*)coordinates type:(NSString *)typeName
 {
     NSDictionary *parameters = @{};
     if (nil != coordinates) {
-        parameters = @{@"coordinates": coordinates};
+        parameters = @{@"coordinates": coordinates,
+                       @"type":typeName};
     }
     [[TANDataCenter dataCenter] fetchDataWithType:@"GET" URL:[TANDataCenter projectApi] parameters:parameters completion:^(id responseObject) {
         NSArray * jsons = responseObject[@"projects"];
@@ -153,5 +154,14 @@ static TANDataCenter * dataCenter = nil;
     }
 }
 
+#pragma mark ==== Button Relevant ======
++ (UIImage *)selectedImage:(NSString *)str{
+    NSString * name = [NSString stringWithFormat: @"list_top_selected_%@",str];
+    return [UIImage imageNamed:name];
+}
 
++ (UIImage *)unSelectedImage:(NSString *)str{
+    NSString * name = [NSString stringWithFormat: @"list_top_%@",str];
+    return [UIImage imageNamed:name];
+}
 @end

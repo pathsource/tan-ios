@@ -12,9 +12,9 @@
 #import "TanDefinition.h"
 #import "TanProjectDetailVC.h"
 
-static NSString * const cycling = @"cycling";
-static NSString * const walking = @"walking";
-static NSString * const vehicle = @"vehicle";
+ NSString * const cycling = @"cycling";
+ NSString * const walking = @"walking";
+ NSString * const vehicle = @"vehicle";
 
 @interface TanProjectListVC ()<ZLSwipeableViewDataSource,
 ZLSwipeableViewDelegate>
@@ -169,35 +169,26 @@ ZLSwipeableViewDelegate>
 }
 
 - (IBAction)cyclingButtonAction:(id)sender {
-    [cyclingButton setImage:[self selectedImage:cycling] forState:UIControlStateNormal];
-    [walkingButton setImage:[self unSelectedImage:walking] forState:UIControlStateNormal];
-    [drivingButton setImage:[self unSelectedImage:vehicle] forState:UIControlStateNormal];
+    [cyclingButton setImage:[TANDataCenter selectedImage:cycling] forState:UIControlStateNormal];
+    [walkingButton setImage:[TANDataCenter unSelectedImage:walking] forState:UIControlStateNormal];
+    [drivingButton setImage:[TANDataCenter unSelectedImage:vehicle] forState:UIControlStateNormal];
 }
 
 - (IBAction)walkingButtonAction:(id)sender {
-    [walkingButton setImage:[self selectedImage:walking] forState:UIControlStateNormal];
-    [cyclingButton setImage:[self unSelectedImage:cycling] forState:UIControlStateNormal];
-    [drivingButton setImage:[self unSelectedImage:vehicle] forState:UIControlStateNormal];
+    [walkingButton setImage:[TANDataCenter selectedImage:walking] forState:UIControlStateNormal];
+    [cyclingButton setImage:[TANDataCenter unSelectedImage:cycling] forState:UIControlStateNormal];
+    [drivingButton setImage:[TANDataCenter unSelectedImage:vehicle] forState:UIControlStateNormal];
 }
 
 - (IBAction)drivingButtonAction:(id)sender {
-    [drivingButton setImage:[self selectedImage:vehicle] forState:UIControlStateNormal];
-     [cyclingButton setImage:[self unSelectedImage:cycling] forState:UIControlStateNormal];
-     [walkingButton setImage:[self unSelectedImage:walking] forState:UIControlStateNormal];
+    [drivingButton setImage:[TANDataCenter selectedImage:vehicle] forState:UIControlStateNormal];
+     [cyclingButton setImage:[TANDataCenter unSelectedImage:cycling] forState:UIControlStateNormal];
+     [walkingButton setImage:[TANDataCenter unSelectedImage:walking] forState:UIControlStateNormal];
 }
 
 - (IBAction)mapButtonAction:(id)sender {
 }
 
 
-#pragma mark ==== Button Relevant ======
-- (UIImage *)selectedImage:(NSString *)str{
-    NSString * name = [NSString stringWithFormat: @"list_top_selected_%@",str];
-    return [UIImage imageNamed:name];
-}
 
-- (UIImage *)unSelectedImage:(NSString *)str{
-    NSString * name = [NSString stringWithFormat: @"list_top_%@",str];
-    return [UIImage imageNamed:name];
-}
 @end

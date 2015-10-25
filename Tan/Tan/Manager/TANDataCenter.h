@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 typedef NS_ENUM(NSUInteger,TANType) {
     TANTypeWalk = 0,
@@ -32,11 +33,15 @@ extern NSString * const TANDidGetProjectNotification;
 @property (assign,nonatomic) TANType type;
 
 + (TANDataCenter *)dataCenter;
-- (void)startFetchProjects:(NSArray*)coordinates;
+
+- (void)startFetchProjects:(NSArray*)coordinates type:(NSString *)typeName;
 - (void)startProject:(NSNumber *)projectID;
 - (void)startCheckin:(NSNumber *)projectID withCoordinates:(NSArray*)coordinates;
 - (void)startValidateAnswer:(NSNumber *)projectID withAnswer:(NSString*)answer;
 
 + (NSString *)projectDetailApi:(NSNumber *)projectID;
 + (NSString *)projectCongratApi:(NSNumber *)projectID;
+
++ (UIImage *)selectedImage:(NSString *)str;
++ (UIImage *)unSelectedImage:(NSString *)str;
 @end

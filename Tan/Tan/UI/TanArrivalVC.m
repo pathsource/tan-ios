@@ -66,10 +66,10 @@
     [bgImageView setImage:[UIImage imageNamed:@"arrive_bg.png"]];
     
     arrivalButton.backgroundColor = [UIColor colorFromRGB:0x50af37];
-    [arrivalButton setTitle:@"到达 " forState:UIControlStateNormal];
+    [arrivalButton setTitle:@"到  达 " forState:UIControlStateNormal];
  
     giveupButton.backgroundColor =[UIColor colorFromRGB:0xb6b6b6];
-    [giveupButton setTitle:@"放弃" forState:UIControlStateNormal];
+    [giveupButton setTitle:@"放  弃" forState:UIControlStateNormal];
     
     arrivelLabel.text = @"开始解答谜题";
     arrivelLabel.font = [UIFont systemFontOfSize:11];
@@ -120,7 +120,7 @@
     nameLabel.text = [NSString stringWithFormat:@"目的地:%@",project.address];
     
     NSMutableAttributedString * attributedSteps = [[NSMutableAttributedString alloc] initWithString:[NSString stringWithFormat:@"当前已经行走%ld步",totalStepsCount]];
-    [attributedSteps addAttribute:NSForegroundColorAttributeName value:[UIColor blueColor] range:NSMakeRange(6, attributedSteps.length - 7)];
+    [attributedSteps addAttribute:NSForegroundColorAttributeName value:[UIColor colorFromRGB:0x28a4de] range:NSMakeRange(6, attributedSteps.length - 7)];
     stepsLabel.attributedText = attributedSteps;
     
 //    caloriesLabel.text = [NSString stringWithFormat:@"相当于大约%ld大卡",totalStepsCount/28];
@@ -221,8 +221,9 @@
                                                                      totalSteps = totalSteps + step;
                                                                      
                                                                      totalStepsCount = totalSteps;
-                                                                     [self performSelectorOnMainThread:@selector(setUpData) withObject:nil waitUntilDone:YES];
                                                                  }
+                                                                 
+                                                                 [self performSelectorOnMainThread:@selector(setUpData) withObject:nil waitUntilDone:YES];
                                                                  
                                                              }
                                                          }];
